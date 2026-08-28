@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-08-28T09:24:42.324Z",
+  "generatedAt": "2026-08-28T09:26:31.219Z",
   "totalSources": 10,
-  "count": 137,
+  "count": 139,
   "categoryCounts": {
-    "national": 82,
+    "national": 83,
     "technology": 7,
-    "international": 18,
+    "international": 19,
     "education": 3,
     "business": 5,
     "entertainment": 8,
@@ -25,8 +25,21 @@
       "sourceLang": "bn",
       "category": "national",
       "categoryBn": "জাতীয়",
-      "pubDate": "2026-08-28T09:24:41.893Z",
-      "fetchedAt": "2026-08-28T09:24:41.893Z"
+      "pubDate": "2026-08-28T09:26:31.013Z",
+      "fetchedAt": "2026-08-28T09:26:31.014Z"
+    },
+    {
+      "id": "n1a4xpy7",
+      "title": "রাজশাহী চিড়িয়াখানার ঐতিহ্য ফিরিয়ে আনতে সিটি করপোরেশনের নতুন উদ্যোগ",
+      "summary": "রাজশাহী কেন্দ্রীয় উদ্যান ও চিড়িয়াখানায় নতুন পশুপাখি সংযোজন, অবকাঠামোগত উন্নয়ন ও আধুনিকায়নের উদ্যোগ নেওয়া হয়েছে। শুক্রবার (২৮ আগস্ট) সকালে চিড়িয়াখানাটি পরিদর্শন করেছেন রাজশাহী সিটি করপোরেশনের (রাসিক) প্রশাসক মো. মাহফুজুর রহমান রিটন এবং প্রাণিসম্পদ অধিদপ্তরের মহাপরিচালক (ডিজি) মো. শাহজামান খান।\r\nপরিদর্শনকালে তারা চিড়িয়াখানার বিভিন্ন অংশ ঘুরে দেখেন। এ সময় নতুন পশুপাখি সংযোজন, অবকাঠামোগত উন্নয়ন, দর্শন",
+      "link": "https://www.jagonews24.com/country/news/1151606",
+      "image": "https://cdn.jagonews24.com/media/imgAllNew/BG/2023March/zoo-20260828152357.jpg",
+      "source": "জাগো নিউজ ২৪",
+      "sourceLang": "bn",
+      "category": "national",
+      "categoryBn": "জাতীয়",
+      "pubDate": "2026-08-28T09:23:57.000Z",
+      "fetchedAt": "2026-08-28T09:26:30.966Z"
     },
     {
       "id": "n1a4xpy6",
@@ -39,7 +52,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2026-08-28T09:18:54.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.828Z"
+      "fetchedAt": "2026-08-28T09:26:30.966Z"
     },
     {
       "id": "nei0zex",
@@ -52,7 +65,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2026-08-28T09:15:59.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.828Z"
+      "fetchedAt": "2026-08-28T09:26:30.966Z"
     },
     {
       "id": "n13l71wb",
@@ -65,7 +78,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2026-08-28T09:15:28.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.828Z"
+      "fetchedAt": "2026-08-28T09:26:30.966Z"
     },
     {
       "id": "n1a4xpy3",
@@ -78,7 +91,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2026-08-28T09:15:14.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.828Z"
+      "fetchedAt": "2026-08-28T09:26:30.966Z"
     },
     {
       "id": "nwx83s8",
@@ -117,7 +130,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2026-08-28T09:10:54.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.828Z"
+      "fetchedAt": "2026-08-28T09:26:30.966Z"
     },
     {
       "id": "n1usf5fo",
@@ -156,7 +169,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2026-08-28T09:07:16.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.732Z"
+      "fetchedAt": "2026-08-28T09:26:30.740Z"
     },
     {
       "id": "n1plybso",
@@ -169,7 +182,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2026-08-28T09:06:50.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.828Z"
+      "fetchedAt": "2026-08-28T09:26:30.966Z"
     },
     {
       "id": "n12i8zko",
@@ -182,7 +195,7 @@
       "category": "technology",
       "categoryBn": "প্রযুক্তি",
       "pubDate": "2026-08-28T09:04:14.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.732Z"
+      "fetchedAt": "2026-08-28T09:26:30.740Z"
     },
     {
       "id": "n11j53zb",
@@ -195,7 +208,7 @@
       "category": "international",
       "categoryBn": "আন্তর্জাতিক",
       "pubDate": "2026-08-28T09:03:42.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.732Z"
+      "fetchedAt": "2026-08-28T09:26:30.740Z"
     },
     {
       "id": "n5c6ppe",
@@ -208,7 +221,7 @@
       "category": "international",
       "categoryBn": "আন্তর্জাতিক",
       "pubDate": "2026-08-28T09:00:45.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.732Z"
+      "fetchedAt": "2026-08-28T09:26:30.740Z"
     },
     {
       "id": "nvzvbtg",
@@ -221,7 +234,7 @@
       "category": "education",
       "categoryBn": "শিক্ষা",
       "pubDate": "2026-08-28T09:00:00.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.732Z"
+      "fetchedAt": "2026-08-28T09:26:30.740Z"
     },
     {
       "id": "n1vi5rvv",
@@ -234,7 +247,7 @@
       "category": "business",
       "categoryBn": "অর্থনীতি ও বাণিজ্য",
       "pubDate": "2026-08-28T09:00:00.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.732Z"
+      "fetchedAt": "2026-08-28T09:26:30.740Z"
     },
     {
       "id": "n2x6q1h",
@@ -247,7 +260,7 @@
       "category": "international",
       "categoryBn": "আন্তর্জাতিক",
       "pubDate": "2026-08-28T09:00:00.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.732Z"
+      "fetchedAt": "2026-08-28T09:26:30.740Z"
     },
     {
       "id": "n1ebo8d8",
@@ -260,7 +273,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2026-08-28T09:00:00.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.732Z"
+      "fetchedAt": "2026-08-28T09:26:30.740Z"
     },
     {
       "id": "ntx69s0",
@@ -273,7 +286,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2026-08-28T08:59:04.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.732Z"
+      "fetchedAt": "2026-08-28T09:26:30.740Z"
     },
     {
       "id": "nzlft8m",
@@ -286,7 +299,7 @@
       "category": "entertainment",
       "categoryBn": "বিনোদন",
       "pubDate": "2026-08-28T08:58:46.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.828Z"
+      "fetchedAt": "2026-08-28T09:26:30.966Z"
     },
     {
       "id": "n1a4xpfb",
@@ -299,7 +312,7 @@
       "category": "politics",
       "categoryBn": "রাজনীতি",
       "pubDate": "2026-08-28T08:57:25.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.828Z"
+      "fetchedAt": "2026-08-28T09:26:30.966Z"
     },
     {
       "id": "nphmpud",
@@ -312,7 +325,7 @@
       "category": "sports",
       "categoryBn": "খেলাধুলা",
       "pubDate": "2026-08-28T08:56:14.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.732Z"
+      "fetchedAt": "2026-08-28T09:26:30.740Z"
     },
     {
       "id": "nj4xq51",
@@ -325,7 +338,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2026-08-28T08:55:30.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.893Z"
+      "fetchedAt": "2026-08-28T09:26:31.014Z"
     },
     {
       "id": "n1a4xpfa",
@@ -338,7 +351,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2026-08-28T08:54:21.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.828Z"
+      "fetchedAt": "2026-08-28T09:26:30.966Z"
     },
     {
       "id": "nbpnhe",
@@ -351,7 +364,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2026-08-28T08:50:30.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.732Z"
+      "fetchedAt": "2026-08-28T09:26:30.740Z"
     },
     {
       "id": "n1a4xpf9",
@@ -364,7 +377,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2026-08-28T08:50:07.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.828Z"
+      "fetchedAt": "2026-08-28T09:26:30.966Z"
     },
     {
       "id": "n1a4xpf8",
@@ -377,7 +390,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2026-08-28T08:46:52.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.828Z"
+      "fetchedAt": "2026-08-28T09:26:30.966Z"
     },
     {
       "id": "n9aeglv",
@@ -390,7 +403,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2026-08-28T08:43:59.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.828Z"
+      "fetchedAt": "2026-08-28T09:26:30.966Z"
     },
     {
       "id": "n1a4xpf6",
@@ -403,7 +416,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2026-08-28T08:42:30.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.828Z"
+      "fetchedAt": "2026-08-28T09:26:30.966Z"
     },
     {
       "id": "nepa3xy",
@@ -416,7 +429,7 @@
       "category": "international",
       "categoryBn": "আন্তর্জাতিক",
       "pubDate": "2026-08-28T08:42:24.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.732Z"
+      "fetchedAt": "2026-08-28T09:26:30.740Z"
     },
     {
       "id": "nc71cop",
@@ -429,7 +442,7 @@
       "category": "international",
       "categoryBn": "আন্তর্জাতিক",
       "pubDate": "2026-08-28T08:41:02.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.828Z"
+      "fetchedAt": "2026-08-28T09:26:30.966Z"
     },
     {
       "id": "n3lwmyw",
@@ -442,7 +455,7 @@
       "category": "business",
       "categoryBn": "অর্থনীতি ও বাণিজ্য",
       "pubDate": "2026-08-28T08:39:27.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.828Z"
+      "fetchedAt": "2026-08-28T09:26:30.966Z"
     },
     {
       "id": "n1x76lpk",
@@ -455,7 +468,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2026-08-28T08:39:01.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.733Z"
+      "fetchedAt": "2026-08-28T09:26:30.740Z"
     },
     {
       "id": "n1csuro",
@@ -468,11 +481,11 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2026-08-28T08:37:50.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.828Z"
+      "fetchedAt": "2026-08-28T09:26:30.966Z"
     },
     {
       "id": "nh29ciz",
-      "title": "প্রাকৃতিক দুর্যোগ কেন হয়? ইসলাম যা বলে",
+      "title": "প্রাকৃতিক দুর্যোগের কারণ সম্পর্কে ইসলাম কী বলে",
       "summary": "পরিবেশগত বিপর্যয়ের ফলে প্রাকৃতিক দুর্যোগের মাত্রা ও তীব্রতা ক্রমেই বাড়ছে। এমন সংকটময় পরিস্থিতিতে একটি প্রশ্ন প্রায়ই দেখা দেয়—ইসলাম এই প্রাকৃতিক দুর্যোগগুলোকে ঠিক কীভাবে দেখে?",
       "link": "https://www.prothomalo.com/religion/islam/5fysy321ha",
       "image": "https://media.prothomalo.com/prothomalo-bangla/2026-08-28/xsrj5gc5/pexels-juan-moccagatta-2159466094-36288967.jpg",
@@ -481,7 +494,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2026-08-28T08:36:52.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.733Z"
+      "fetchedAt": "2026-08-28T09:26:30.740Z"
     },
     {
       "id": "nriiie8",
@@ -494,7 +507,7 @@
       "category": "technology",
       "categoryBn": "প্রযুক্তি",
       "pubDate": "2026-08-28T08:34:24.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.828Z"
+      "fetchedAt": "2026-08-28T09:26:30.966Z"
     },
     {
       "id": "nzlft7q",
@@ -507,7 +520,7 @@
       "category": "entertainment",
       "categoryBn": "বিনোদন",
       "pubDate": "2026-08-28T08:33:05.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.828Z"
+      "fetchedAt": "2026-08-28T09:26:30.966Z"
     },
     {
       "id": "nok6itl",
@@ -520,7 +533,7 @@
       "category": "international",
       "categoryBn": "আন্তর্জাতিক",
       "pubDate": "2026-08-28T08:32:27.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.733Z"
+      "fetchedAt": "2026-08-28T09:26:30.740Z"
     },
     {
       "id": "n10qyxig",
@@ -533,7 +546,7 @@
       "category": "politics",
       "categoryBn": "রাজনীতি",
       "pubDate": "2026-08-28T08:32:11.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.828Z"
+      "fetchedAt": "2026-08-28T09:26:30.966Z"
     },
     {
       "id": "n1a4xpee",
@@ -546,7 +559,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2026-08-28T08:27:55.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.828Z"
+      "fetchedAt": "2026-08-28T09:26:30.966Z"
     },
     {
       "id": "n3gvnqm",
@@ -559,7 +572,7 @@
       "category": "entertainment",
       "categoryBn": "বিনোদন",
       "pubDate": "2026-08-28T08:22:41.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.733Z"
+      "fetchedAt": "2026-08-28T09:26:30.740Z"
     },
     {
       "id": "n10r7i8n",
@@ -572,7 +585,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2026-08-28T08:22:32.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.733Z"
+      "fetchedAt": "2026-08-28T09:26:30.740Z"
     },
     {
       "id": "nei0yv5",
@@ -585,7 +598,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2026-08-28T08:16:47.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.828Z"
+      "fetchedAt": "2026-08-28T09:26:30.967Z"
     },
     {
       "id": "nzypxqh",
@@ -598,7 +611,7 @@
       "category": "sports",
       "categoryBn": "খেলাধুলা",
       "pubDate": "2026-08-28T08:14:52.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.828Z"
+      "fetchedAt": "2026-08-28T09:26:30.967Z"
     },
     {
       "id": "nkojbck",
@@ -611,7 +624,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2026-08-28T08:14:37.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.733Z"
+      "fetchedAt": "2026-08-28T09:26:30.740Z"
     },
     {
       "id": "n1r1m0v0",
@@ -624,7 +637,7 @@
       "category": "sports",
       "categoryBn": "খেলাধুলা",
       "pubDate": "2026-08-28T08:00:00.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.733Z"
+      "fetchedAt": "2026-08-28T09:26:30.740Z"
     },
     {
       "id": "n1oj0cbe",
@@ -637,7 +650,7 @@
       "category": "technology",
       "categoryBn": "প্রযুক্তি",
       "pubDate": "2026-08-28T08:00:00.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.733Z"
+      "fetchedAt": "2026-08-28T09:26:30.740Z"
     },
     {
       "id": "n1eikvsx",
@@ -650,7 +663,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2026-08-28T08:00:00.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.733Z"
+      "fetchedAt": "2026-08-28T09:26:30.740Z"
     },
     {
       "id": "n1n9y6mi",
@@ -663,7 +676,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2026-08-28T08:00:00.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.733Z"
+      "fetchedAt": "2026-08-28T09:26:30.740Z"
     },
     {
       "id": "n1xtfei",
@@ -676,7 +689,7 @@
       "category": "business",
       "categoryBn": "অর্থনীতি ও বাণিজ্য",
       "pubDate": "2026-08-28T08:00:00.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.733Z"
+      "fetchedAt": "2026-08-28T09:26:30.740Z"
     },
     {
       "id": "n5mpy48",
@@ -689,7 +702,7 @@
       "category": "international",
       "categoryBn": "আন্তর্জাতিক",
       "pubDate": "2026-08-28T07:51:21.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.733Z"
+      "fetchedAt": "2026-08-28T09:26:30.740Z"
     },
     {
       "id": "n1oqbbcu",
@@ -702,7 +715,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2026-08-28T07:47:43.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.893Z"
+      "fetchedAt": "2026-08-28T09:26:31.014Z"
     },
     {
       "id": "nrp7be7",
@@ -715,7 +728,7 @@
       "category": "sports",
       "categoryBn": "খেলাধুলা",
       "pubDate": "2026-08-28T07:46:41.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.733Z"
+      "fetchedAt": "2026-08-28T09:26:30.740Z"
     },
     {
       "id": "nzlft7l",
@@ -728,7 +741,7 @@
       "category": "entertainment",
       "categoryBn": "বিনোদন",
       "pubDate": "2026-08-28T07:43:33.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.828Z"
+      "fetchedAt": "2026-08-28T09:26:30.967Z"
     },
     {
       "id": "n1tddmsq",
@@ -741,7 +754,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2026-08-28T07:43:17.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.733Z"
+      "fetchedAt": "2026-08-28T09:26:30.740Z"
     },
     {
       "id": "n1lvbce9",
@@ -754,7 +767,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2026-08-28T07:36:17.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.733Z"
+      "fetchedAt": "2026-08-28T09:26:30.740Z"
     },
     {
       "id": "nc71cnu",
@@ -767,7 +780,7 @@
       "category": "international",
       "categoryBn": "আন্তর্জাতিক",
       "pubDate": "2026-08-28T07:35:21.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.828Z"
+      "fetchedAt": "2026-08-28T09:26:30.967Z"
     },
     {
       "id": "n4qgsp1",
@@ -780,7 +793,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2026-08-28T07:33:09.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.733Z"
+      "fetchedAt": "2026-08-28T09:26:30.740Z"
     },
     {
       "id": "n1a4xpe9",
@@ -793,7 +806,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2026-08-28T07:30:40.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.828Z"
+      "fetchedAt": "2026-08-28T09:26:30.967Z"
     },
     {
       "id": "n2l7zxs",
@@ -806,7 +819,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2026-08-28T07:28:51.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.733Z"
+      "fetchedAt": "2026-08-28T09:26:30.740Z"
     },
     {
       "id": "n9aegkw",
@@ -819,7 +832,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2026-08-28T07:18:13.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.828Z"
+      "fetchedAt": "2026-08-28T09:26:30.967Z"
     },
     {
       "id": "nq7tgd5",
@@ -832,7 +845,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2026-08-28T07:13:57.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.828Z"
+      "fetchedAt": "2026-08-28T09:26:30.967Z"
     },
     {
       "id": "n9aegk9",
@@ -845,7 +858,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2026-08-28T07:13:37.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.828Z"
+      "fetchedAt": "2026-08-28T09:26:30.967Z"
     },
     {
       "id": "nzlft6u",
@@ -858,7 +871,7 @@
       "category": "entertainment",
       "categoryBn": "বিনোদন",
       "pubDate": "2026-08-28T07:10:49.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.828Z"
+      "fetchedAt": "2026-08-28T09:26:30.967Z"
     },
     {
       "id": "n1wtvhm",
@@ -871,7 +884,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2026-08-28T07:01:44.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.733Z"
+      "fetchedAt": "2026-08-28T09:26:30.740Z"
     },
     {
       "id": "n1a4xpdj",
@@ -884,7 +897,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2026-08-28T07:00:32.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.828Z"
+      "fetchedAt": "2026-08-28T09:26:30.967Z"
     },
     {
       "id": "n1a4xpdi",
@@ -897,7 +910,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2026-08-28T07:00:17.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.828Z"
+      "fetchedAt": "2026-08-28T09:26:30.967Z"
     },
     {
       "id": "n1a4xpdh",
@@ -910,7 +923,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2026-08-28T06:56:27.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.828Z"
+      "fetchedAt": "2026-08-28T09:26:30.967Z"
     },
     {
       "id": "n1oiv8ma",
@@ -923,7 +936,7 @@
       "category": "international",
       "categoryBn": "আন্তর্জাতিক",
       "pubDate": "2026-08-28T06:53:04.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.828Z"
+      "fetchedAt": "2026-08-28T09:26:30.967Z"
     },
     {
       "id": "n19kskpz",
@@ -936,7 +949,7 @@
       "category": "international",
       "categoryBn": "আন্তর্জাতিক",
       "pubDate": "2026-08-28T06:52:48.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.828Z"
+      "fetchedAt": "2026-08-28T09:26:30.967Z"
     },
     {
       "id": "nedbkx6",
@@ -949,7 +962,7 @@
       "category": "technology",
       "categoryBn": "প্রযুক্তি",
       "pubDate": "2026-08-28T06:49:53.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.733Z"
+      "fetchedAt": "2026-08-28T09:26:30.740Z"
     },
     {
       "id": "nc71cmy",
@@ -962,7 +975,7 @@
       "category": "international",
       "categoryBn": "আন্তর্জাতিক",
       "pubDate": "2026-08-28T06:49:53.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.828Z"
+      "fetchedAt": "2026-08-28T09:26:30.967Z"
     },
     {
       "id": "n1xm9wcq",
@@ -975,7 +988,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2026-08-28T06:49:17.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.893Z"
+      "fetchedAt": "2026-08-28T09:26:31.014Z"
     },
     {
       "id": "nfpq5r6",
@@ -988,7 +1001,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2026-08-28T06:48:04.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.733Z"
+      "fetchedAt": "2026-08-28T09:26:30.740Z"
     },
     {
       "id": "nei0yu5",
@@ -1001,7 +1014,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2026-08-28T06:44:12.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.828Z"
+      "fetchedAt": "2026-08-28T09:26:30.967Z"
     },
     {
       "id": "nc71cmb",
@@ -1014,7 +1027,7 @@
       "category": "international",
       "categoryBn": "আন্তর্জাতিক",
       "pubDate": "2026-08-28T06:41:56.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.828Z"
+      "fetchedAt": "2026-08-28T09:26:30.967Z"
     },
     {
       "id": "n1lbk70c",
@@ -1027,7 +1040,7 @@
       "category": "international",
       "categoryBn": "আন্তর্জাতিক",
       "pubDate": "2026-08-28T06:39:04.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.733Z"
+      "fetchedAt": "2026-08-28T09:26:30.740Z"
     },
     {
       "id": "n9aegje",
@@ -1040,7 +1053,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2026-08-28T06:38:57.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.828Z"
+      "fetchedAt": "2026-08-28T09:26:30.967Z"
     },
     {
       "id": "n1ca9pk6",
@@ -1053,7 +1066,7 @@
       "category": "sports",
       "categoryBn": "খেলাধুলা",
       "pubDate": "2026-08-28T06:37:26.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.828Z"
+      "fetchedAt": "2026-08-28T09:26:30.967Z"
     },
     {
       "id": "npjf5as",
@@ -1066,7 +1079,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2026-08-28T06:36:18.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.733Z"
+      "fetchedAt": "2026-08-28T09:26:30.740Z"
     },
     {
       "id": "n1kpgar5",
@@ -1079,7 +1092,7 @@
       "category": "sports",
       "categoryBn": "খেলাধুলা",
       "pubDate": "2026-08-28T06:35:05.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.733Z"
+      "fetchedAt": "2026-08-28T09:26:30.740Z"
     },
     {
       "id": "n1rfm1z9",
@@ -1092,7 +1105,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2026-08-28T06:31:55.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.828Z"
+      "fetchedAt": "2026-08-28T09:26:30.967Z"
     },
     {
       "id": "n1a4xpcn",
@@ -1105,7 +1118,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2026-08-28T06:30:25.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.828Z"
+      "fetchedAt": "2026-08-28T09:26:30.967Z"
     },
     {
       "id": "n1alryq9",
@@ -1118,7 +1131,7 @@
       "category": "entertainment",
       "categoryBn": "বিনোদন",
       "pubDate": "2026-08-28T06:30:00.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.733Z"
+      "fetchedAt": "2026-08-28T09:26:30.740Z"
     },
     {
       "id": "n1q9oo82",
@@ -1131,7 +1144,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2026-08-28T06:29:45.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.828Z"
+      "fetchedAt": "2026-08-28T09:26:30.967Z"
     },
     {
       "id": "n14gcbvi",
@@ -1144,7 +1157,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2026-08-28T06:27:48.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.733Z"
+      "fetchedAt": "2026-08-28T09:26:30.740Z"
     },
     {
       "id": "n1a4xpcl",
@@ -1157,7 +1170,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2026-08-28T06:26:57.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.828Z"
+      "fetchedAt": "2026-08-28T09:26:30.967Z"
     },
     {
       "id": "n1d86ywo",
@@ -1170,7 +1183,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2026-08-28T06:21:29.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.828Z"
+      "fetchedAt": "2026-08-28T09:26:30.967Z"
     },
     {
       "id": "nwx4x3c",
@@ -1183,7 +1196,7 @@
       "category": "opinion",
       "categoryBn": "মতামত",
       "pubDate": "2026-08-28T06:12:46.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.733Z"
+      "fetchedAt": "2026-08-28T09:26:30.740Z"
     },
     {
       "id": "n147aftr",
@@ -1196,7 +1209,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2026-08-28T06:07:46.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.733Z"
+      "fetchedAt": "2026-08-28T09:26:30.740Z"
     },
     {
       "id": "n2i97sg",
@@ -1209,7 +1222,7 @@
       "category": "international",
       "categoryBn": "আন্তর্জাতিক",
       "pubDate": "2026-08-28T06:02:58.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.733Z"
+      "fetchedAt": "2026-08-28T09:26:30.741Z"
     },
     {
       "id": "n1a4xpcj",
@@ -1222,7 +1235,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2026-08-28T06:00:54.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.828Z"
+      "fetchedAt": "2026-08-28T09:26:30.967Z"
     },
     {
       "id": "nwi8qfo",
@@ -1235,7 +1248,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2026-08-28T06:00:00.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.733Z"
+      "fetchedAt": "2026-08-28T09:26:30.741Z"
     },
     {
       "id": "nqa8e0t",
@@ -1248,7 +1261,7 @@
       "category": "technology",
       "categoryBn": "প্রযুক্তি",
       "pubDate": "2026-08-28T06:00:00.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.733Z"
+      "fetchedAt": "2026-08-28T09:26:30.741Z"
     },
     {
       "id": "ny47w67",
@@ -1261,7 +1274,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2026-08-28T06:00:00.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.733Z"
+      "fetchedAt": "2026-08-28T09:26:30.741Z"
     },
     {
       "id": "ny544gk",
@@ -1274,7 +1287,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2026-08-28T06:00:00.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.733Z"
+      "fetchedAt": "2026-08-28T09:26:30.741Z"
     },
     {
       "id": "n1a4xpci",
@@ -1287,7 +1300,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2026-08-28T05:58:09.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.828Z"
+      "fetchedAt": "2026-08-28T09:26:30.967Z"
     },
     {
       "id": "n18ti9qe",
@@ -1300,7 +1313,7 @@
       "category": "business",
       "categoryBn": "অর্থনীতি ও বাণিজ্য",
       "pubDate": "2026-08-28T05:55:32.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.733Z"
+      "fetchedAt": "2026-08-28T09:26:30.741Z"
     },
     {
       "id": "n1qj8o3k",
@@ -1313,7 +1326,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2026-08-28T05:54:54.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.733Z"
+      "fetchedAt": "2026-08-28T09:26:30.741Z"
     },
     {
       "id": "nuqjlcn",
@@ -1326,7 +1339,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2026-08-28T05:51:00.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.733Z"
+      "fetchedAt": "2026-08-28T09:26:30.741Z"
     },
     {
       "id": "n9tbegl",
@@ -1339,7 +1352,7 @@
       "category": "opinion",
       "categoryBn": "মতামত",
       "pubDate": "2026-08-28T05:49:32.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.828Z"
+      "fetchedAt": "2026-08-28T09:26:30.967Z"
     },
     {
       "id": "nzlft55",
@@ -1352,7 +1365,7 @@
       "category": "entertainment",
       "categoryBn": "বিনোদন",
       "pubDate": "2026-08-28T05:48:35.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.828Z"
+      "fetchedAt": "2026-08-28T09:26:30.967Z"
     },
     {
       "id": "n12emre1",
@@ -1365,7 +1378,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2026-08-28T05:47:10.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.733Z"
+      "fetchedAt": "2026-08-28T09:26:30.741Z"
     },
     {
       "id": "nriiibl",
@@ -1378,7 +1391,7 @@
       "category": "technology",
       "categoryBn": "প্রযুক্তি",
       "pubDate": "2026-08-28T05:46:11.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.828Z"
+      "fetchedAt": "2026-08-28T09:26:30.967Z"
     },
     {
       "id": "n9aegih",
@@ -1404,7 +1417,7 @@
       "category": "health",
       "categoryBn": "স্বাস্থ্য",
       "pubDate": "2026-08-28T05:41:00.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.733Z"
+      "fetchedAt": "2026-08-28T09:26:30.741Z"
     },
     {
       "id": "n8zoozw",
@@ -1417,7 +1430,7 @@
       "category": "international",
       "categoryBn": "আন্তর্জাতিক",
       "pubDate": "2026-08-28T05:35:37.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.733Z"
+      "fetchedAt": "2026-08-28T09:26:30.741Z"
     },
     {
       "id": "n4kdczu",
@@ -1430,7 +1443,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2026-08-28T05:30:00.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.733Z"
+      "fetchedAt": "2026-08-28T09:26:30.741Z"
     },
     {
       "id": "niivavm",
@@ -1443,7 +1456,7 @@
       "category": "entertainment",
       "categoryBn": "বিনোদন",
       "pubDate": "2026-08-28T05:30:00.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.733Z"
+      "fetchedAt": "2026-08-28T09:26:30.741Z"
     },
     {
       "id": "n1vqhovm",
@@ -1456,7 +1469,7 @@
       "category": "sports",
       "categoryBn": "খেলাধুলা",
       "pubDate": "2026-08-28T05:28:51.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.733Z"
+      "fetchedAt": "2026-08-28T09:26:30.741Z"
     },
     {
       "id": "n1cytq9u",
@@ -1469,7 +1482,20 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2026-08-28T05:15:56.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.733Z"
+      "fetchedAt": "2026-08-28T09:26:30.741Z"
+    },
+    {
+      "id": "n1inm5g5",
+      "title": "‘নিমেষেই চোখের সামনে নিশ্চিহ্ন হয়ে গেল আমার গ্রাম’",
+      "summary": "ত্রিশূলী নদীর ভয়াবহ বানে চোখের পলকে নিশ্চিহ্ন হয়ে গেছে নেপালের সোলে গ্রাম। স্বজন, ঘরবাড়ি, সেতু আর স্মৃতির জনপদ হারিয়ে তা এখন ধ্বংসস্তূপ।",
+      "link": "https://www.prothomalo.com/world/asia/z206dizuu5",
+      "image": "https://media.prothomalo.com/prothomalo-bangla/2026-08-28/not273ol/Untitled-2.jpg",
+      "source": "প্রথম আলো",
+      "sourceLang": "bn",
+      "category": "international",
+      "categoryBn": "আন্তর্জাতিক",
+      "pubDate": "2026-08-28T05:15:00.000Z",
+      "fetchedAt": "2026-08-28T09:26:30.741Z"
     },
     {
       "id": "n1byf75s",
@@ -1482,7 +1508,7 @@
       "category": "business",
       "categoryBn": "অর্থনীতি ও বাণিজ্য",
       "pubDate": "2026-08-28T05:01:00.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.733Z"
+      "fetchedAt": "2026-08-28T09:26:30.741Z"
     },
     {
       "id": "ngfaoz3",
@@ -1508,7 +1534,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2026-08-28T03:34:57.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.893Z"
+      "fetchedAt": "2026-08-28T09:26:31.014Z"
     },
     {
       "id": "n1tlo5xy",
@@ -1521,7 +1547,7 @@
       "category": "sports",
       "categoryBn": "খেলাধুলা",
       "pubDate": "2026-08-28T03:00:00.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.733Z"
+      "fetchedAt": "2026-08-28T09:26:30.741Z"
     },
     {
       "id": "n28wihg",
@@ -1534,7 +1560,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2026-08-28T02:03:00.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.733Z"
+      "fetchedAt": "2026-08-28T09:26:30.741Z"
     },
     {
       "id": "n16ophok",
@@ -1547,7 +1573,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2026-08-28T01:44:46.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.893Z"
+      "fetchedAt": "2026-08-28T09:26:31.014Z"
     },
     {
       "id": "n4nyo6o",
@@ -1560,7 +1586,7 @@
       "category": "education",
       "categoryBn": "শিক্ষা",
       "pubDate": "2026-08-27T16:43:24.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.733Z"
+      "fetchedAt": "2026-08-28T09:26:30.741Z"
     },
     {
       "id": "n15h7m3m",
@@ -1573,7 +1599,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2026-08-27T15:40:42.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.893Z"
+      "fetchedAt": "2026-08-28T09:26:31.014Z"
     },
     {
       "id": "nn86jm6",
@@ -1586,7 +1612,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2026-08-27T09:36:27.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.893Z"
+      "fetchedAt": "2026-08-28T09:26:31.014Z"
     },
     {
       "id": "nfgb2jh",
@@ -1599,7 +1625,7 @@
       "category": "international",
       "categoryBn": "আন্তর্জাতিক",
       "pubDate": "2026-08-27T07:50:44.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.893Z"
+      "fetchedAt": "2026-08-28T09:26:31.014Z"
     },
     {
       "id": "nzy5hs6",
@@ -1612,7 +1638,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2026-08-21T09:00:12.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.893Z"
+      "fetchedAt": "2026-08-28T09:26:31.014Z"
     },
     {
       "id": "n1ji7s1k",
@@ -1625,7 +1651,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2026-08-20T01:38:57.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.893Z"
+      "fetchedAt": "2026-08-28T09:26:31.014Z"
     },
     {
       "id": "nars4nw",
@@ -1638,7 +1664,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2026-08-14T12:49:56.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.893Z"
+      "fetchedAt": "2026-08-28T09:26:31.014Z"
     },
     {
       "id": "nd6p8k9",
@@ -1651,7 +1677,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2026-08-13T08:05:04.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.893Z"
+      "fetchedAt": "2026-08-28T09:26:31.014Z"
     },
     {
       "id": "nb004vi",
@@ -1664,7 +1690,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2026-08-10T01:37:29.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.893Z"
+      "fetchedAt": "2026-08-28T09:26:31.014Z"
     },
     {
       "id": "nztw4d6",
@@ -1677,7 +1703,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2022-07-22T12:00:00.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.679Z"
+      "fetchedAt": "2026-08-28T09:26:30.646Z"
     },
     {
       "id": "napgumf",
@@ -1690,7 +1716,7 @@
       "category": "education",
       "categoryBn": "শিক্ষা",
       "pubDate": "2022-07-22T12:00:00.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.679Z"
+      "fetchedAt": "2026-08-28T09:26:30.646Z"
     },
     {
       "id": "nojfx19",
@@ -1703,7 +1729,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2022-07-22T12:00:00.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.679Z"
+      "fetchedAt": "2026-08-28T09:26:30.646Z"
     },
     {
       "id": "nekjpti",
@@ -1716,7 +1742,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2022-07-22T12:00:00.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.679Z"
+      "fetchedAt": "2026-08-28T09:26:30.646Z"
     },
     {
       "id": "n1hnhhrs",
@@ -1729,7 +1755,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2022-07-21T21:00:00.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.679Z"
+      "fetchedAt": "2026-08-28T09:26:30.646Z"
     },
     {
       "id": "n6e156m",
@@ -1742,7 +1768,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2022-07-21T12:00:00.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.679Z"
+      "fetchedAt": "2026-08-28T09:26:30.647Z"
     },
     {
       "id": "n19ux6i0",
@@ -1755,7 +1781,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2022-07-21T12:00:00.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.679Z"
+      "fetchedAt": "2026-08-28T09:26:30.647Z"
     },
     {
       "id": "nf1gep9",
@@ -1768,7 +1794,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2022-07-21T12:00:00.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.679Z"
+      "fetchedAt": "2026-08-28T09:26:30.647Z"
     },
     {
       "id": "niqt6h4",
@@ -1781,7 +1807,7 @@
       "category": "national",
       "categoryBn": "জাতীয়",
       "pubDate": "2022-07-20T12:00:00.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.679Z"
+      "fetchedAt": "2026-08-28T09:26:30.647Z"
     },
     {
       "id": "n1nq49or",
@@ -1794,7 +1820,7 @@
       "category": "politics",
       "categoryBn": "রাজনীতি",
       "pubDate": "2022-07-20T12:00:00.000Z",
-      "fetchedAt": "2026-08-28T09:24:41.679Z"
+      "fetchedAt": "2026-08-28T09:26:30.647Z"
     }
   ]
 }
