@@ -1,21 +1,15 @@
-name: Update Bangladesh News
+name: Automated News Fetcher & Publisher
 
 on:
   schedule:
-    # Runs every 20 minutes, all day, every day — forever, with no
-    # maintenance required. GitHub Actions cron uses UTC.
-    - cron: '*/20 * * * *'
-  workflow_dispatch: {} # lets you also trigger it manually from the Actions tab
+    - cron: '*/10 * * * *' # Runs every 10 minutes 24/7 automatically even when offline
+  workflow_dispatch:
 
 permissions:
   contents: write
 
-concurrency:
-  group: update-news
-  cancel-in-progress: false
-
 jobs:
-  fetch-and-publish:
+  update-news:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -26,17 +20,19 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Fetch latest news (no npm install needed — zero dependencies)
-        run: node scripts/fetch-news.mjs
-
-      - name: Commit and push if news changed
+      - name: Run News Fetcher Script
         run: |
-          git config user.name "news-bot"
-          git config user.email "news-bot@users.noreply.github.com"
-          if [ -n "$(git status --porcelain data/news.json)" ]; then
-            git add data/news.json
-            git commit -m "chore: auto-update news $(date -u +'%Y-%m-%d %H:%M UTC')"
-            git push
+          if [ -f "scripts/fetch-news.mjs" ]; then
+            node scripts/fetch-news.mjs
+          elif [ -f "auto_fetch_news.js" ]; then
+            node auto_fetch_news.js
           else
-            echo "No changes to publish."
+            echo "No fetch script found!"
           fi
+
+      - name: Commit and push if there are changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/news.json index.html || true
+          git diff --staged --quiet || (git commit -m "feed(news): auto-sync latest updates every 10m [skip ci]" && git push)
