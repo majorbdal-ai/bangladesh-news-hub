@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="bn" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,90 +9,126 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Hind+Siliguri:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
     <!-- Alpine.js -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <style>
-        body { font-family: 'Hind Siliguri', sans-serif; background-color: #0f172a; color: #f8fafc; }
+        body { font-family: 'Hind Siliguri', 'Plus Jakarta Sans', sans-serif; background-color: #f8fafc; color: #0f172a; }
+        .font-serif-title { font-family: 'Playfair Display', 'Hind Siliguri', serif; }
         [x-cloak] { display: none !important; }
+        .hero-banner-gradient { background: linear-gradient(135deg, #047857 0%, #065f46 50%, #0f172a 100%); }
+        .news-card { background: #ffffff; border: 1px solid #e2e8f0; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05); transition: all 0.3s ease; }
+        .news-card:hover { transform: translateY(-4px); box-shadow: 0 20px 35px -10px rgba(16, 185, 129, 0.2); }
     </style>
 </head>
 <body class="min-h-screen flex flex-col" x-data="newsPortal()">
 
-    <!-- Top Header -->
-    <header class="bg-slate-900 border-b border-slate-800 sticky top-0 z-40 px-4 py-4">
+    <!-- Top Header (Clean White Theme) -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-40 px-4 sm:px-8 py-4 shadow-sm">
         <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div class="flex items-center space-x-3">
-                <div class="bg-emerald-600 text-white w-10 h-10 rounded-xl flex items-center justify-center text-xl font-bold">
+            <!-- Brand Logo -->
+            <div class="flex items-center space-x-3 cursor-pointer" @click="selectedCategory = 'all'; searchQuery = ''">
+                <div class="bg-emerald-600 text-white w-12 h-12 rounded-2xl flex items-center justify-center text-2xl font-black shadow-lg shadow-emerald-600/30">
                     <i class="fa-solid fa-newspaper"></i>
                 </div>
                 <div>
-                    <h1 class="text-xl font-bold text-white" x-text="lang === 'bn' ? 'বাংলাদেশ নিউজ হাব' : 'Bangladesh News Hub'"></h1>
-                    <p class="text-xs text-emerald-400 font-semibold" x-text="lang === 'bn' ? '১০০% ইন-সাইট নিউজ পোর্টাল' : '100% In-Site News Portal'"></p>
+                    <h1 class="text-xl sm:text-2xl font-black tracking-tight text-slate-900 font-serif-title">বাংলাদেশ নিউজ হাব</h1>
+                    <p class="text-xs uppercase tracking-wider text-slate-500 font-bold">১০০% ইন-সাইট নিউজ পোর্টাল</p>
                 </div>
             </div>
 
-            <!-- Problem Area 1: Header Control Buttons -->
+            <!-- Top Header Control Buttons (White/Light theme with BLACK text for ultimate clarity) -->
             <div class="flex items-center space-x-3">
-                <button @click="loadNews()" class="bg-emerald-600 hover:bg-emerald-500 text-white px-5 py-2.5 rounded-xl font-bold text-sm shadow-lg flex items-center space-x-2 cursor-pointer">
+                <button @click="loadNews()" :disabled="loading" class="bg-emerald-500 hover:bg-emerald-600 text-black font-black px-5 py-2.5 rounded-2xl text-sm shadow-md flex items-center space-x-2 cursor-pointer transition active:scale-95 border border-emerald-600">
                     <i class="fa-solid fa-rotate" :class="{ 'fa-spin': loading }"></i>
-                    <span x-text="lang === 'bn' ? 'রিয়েল-টাইম সিংক' : 'Live Sync'"></span>
+                    <span x-text="loading ? 'সিংক হচ্ছে...' : 'রিয়েল-টাইম সিংক'"></span>
                 </button>
-                <button @click="lang = lang === 'bn' ? 'en' : 'bn'" class="bg-slate-800 hover:bg-slate-700 text-white px-5 py-2.5 rounded-xl font-bold text-sm shadow-lg flex items-center space-x-2 cursor-pointer border border-slate-700">
-                    <i class="fa-solid fa-globe text-emerald-400"></i>
+                <button @click="lang = lang === 'bn' ? 'en' : 'bn'" class="bg-slate-100 hover:bg-slate-200 text-black font-black px-4 py-2.5 rounded-2xl text-sm shadow-sm flex items-center space-x-1.5 cursor-pointer border border-slate-300">
+                    <i class="fa-solid fa-globe text-emerald-700"></i>
                     <span x-text="lang === 'bn' ? 'English' : 'বাংলা'"></span>
-                </button>
-                <button @click="darkMode = !darkMode" class="bg-slate-800 hover:bg-slate-700 text-white w-10 h-10 rounded-xl font-bold text-sm shadow-lg flex items-center justify-center cursor-pointer border border-slate-700">
-                    <i class="fa-solid" :class="darkMode ? 'fa-sun text-yellow-400' : 'fa-moon text-slate-300'"></i>
                 </button>
             </div>
         </div>
     </header>
 
-    <main class="max-w-7xl mx-auto px-4 py-8 flex-1 w-full">
-        <!-- Loading -->
-        <div x-show="loading" class="text-center py-20 text-emerald-400 font-bold text-lg">সংবাদ লোড হচ্ছে...</div>
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-1 w-full">
+        <!-- Loading State -->
+        <div x-show="loading" class="flex flex-col items-center justify-center py-28 space-y-4">
+            <div class="w-16 h-16 border-4 border-emerald-600 border-t-transparent rounded-full animate-spin"></div>
+            <p class="text-base font-bold text-slate-700">সংবাদ লোড হচ্ছে...</p>
+        </div>
 
         <template x-if="!loading">
             <div>
-                <!-- Problem Area 2: Hero Featured Banner -->
-                <div class="bg-gradient-to-r from-emerald-900 via-teal-900 to-slate-900 rounded-3xl p-8 mb-10 text-white shadow-2xl border border-emerald-500/30" x-show="heroItem">
-                    <span class="bg-emerald-500 text-slate-950 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-3 inline-block">প্রধান সংবাদ</span>
-                    <h2 class="text-2xl sm:text-4xl font-bold mb-4" x-text="heroItem ? heroItem.title : ''"></h2>
-                    <p class="text-slate-300 text-sm sm:text-base mb-6 max-w-2xl line-clamp-2" x-text="heroItem ? heroItem.summary : ''"></p>
-                    <button @click="openModal(heroItem)" class="bg-white hover:bg-emerald-50 text-slate-950 px-8 py-3.5 rounded-xl font-bold text-base shadow-xl flex items-center space-x-2 cursor-pointer">
-                        <span x-text="lang === 'bn' ? 'সম্পূর্ণ সংবাদ পড়ুন' : 'Read Full Report'"></span>
-                        <i class="fa-solid fa-arrow-right text-emerald-600"></i>
-                    </button>
-                </div>
-
-                <!-- Problem Area 3: Category Filter Buttons -->
-                <div class="flex items-center space-x-3 overflow-x-auto pb-4 mb-8">
-                    <button @click="selectCategory('all')" :class="selectedCategory === 'all' ? 'bg-emerald-600 text-white' : 'bg-slate-800 text-slate-300 hover:bg-slate-700'" class="px-5 py-3 rounded-xl font-bold text-sm whitespace-nowrap shadow-md cursor-pointer border border-slate-700">
-                        <span x-text="lang === 'bn' ? 'সকল খবর' : 'All News'"></span> (<span x-text="newsList.length"></span>)
-                    </button>
-                    <template x-for="cat in availableCategories()" :key="cat.id">
-                        <button @click="selectCategory(cat.id)" :class="selectedCategory === cat.id ? 'bg-emerald-600 text-white' : 'bg-slate-800 text-slate-300 hover:bg-slate-700'" class="px-5 py-3 rounded-xl font-bold text-sm whitespace-nowrap shadow-md cursor-pointer border border-slate-700">
-                            <span x-text="lang === 'bn' ? cat.bn : cat.en"></span> (<span x-text="categoryCount(cat.id)"></span>)
+                <!-- Hero Featured Banner -->
+                <div class="hero-banner-gradient rounded-3xl p-6 sm:p-10 lg:p-14 text-white mb-10 relative overflow-hidden shadow-2xl" x-show="heroItem">
+                    <div class="relative z-10 max-w-3xl">
+                        <span class="bg-white text-black text-xs font-black px-4 py-1.5 rounded-full uppercase tracking-wider mb-4 inline-block shadow">
+                            <i class="fa-solid fa-star mr-1 text-emerald-600"></i> প্রধান সংবাদ
+                        </span>
+                        <h2 class="text-2xl sm:text-4xl font-extrabold font-serif-title leading-tight mb-4" x-text="heroItem ? heroItem.title : ''"></h2>
+                        <p class="text-slate-100 text-sm sm:text-base leading-relaxed mb-8 max-w-2xl line-clamp-3" x-text="heroItem ? heroItem.summary : ''"></p>
+                        
+                        <!-- Hero Button with Black Text -->
+                        <button @click="openModal(heroItem)" class="bg-white hover:bg-emerald-50 text-black px-8 py-4 rounded-2xl text-sm sm:text-base font-black transition shadow-xl items-center space-x-2 cursor-pointer flex border-2 border-slate-200">
+                            <span x-text="lang === 'bn' ? 'সম্পূর্ণ সংবাদ পড়ুন' : 'Read Full Report'"></span>
+                            <i class="fa-solid fa-book-open text-emerald-700 ml-1"></i>
                         </button>
-                    </template>
+                    </div>
                 </div>
 
-                <!-- News Grid -->
+                <!-- Category Filters & Search -->
+                <div class="flex flex-col lg:flex-row gap-6 justify-between items-center mb-10 bg-white p-5 lg:p-6 rounded-3xl border border-slate-200 shadow-lg">
+                    <!-- Category Buttons with Black Text -->
+                    <div class="flex items-center space-x-3 overflow-x-auto pb-2 lg:pb-0 w-full lg:w-auto scrollbar-none">
+                        <button @click="selectCategory('all')"
+                            :class="selectedCategory === 'all' ? 'bg-emerald-500 text-black shadow-md scale-105 border-emerald-600' : 'bg-slate-100 text-black hover:bg-slate-200 border border-slate-300'"
+                            class="px-5 py-3 rounded-2xl text-xs sm:text-sm font-black whitespace-nowrap transition flex items-center space-x-2 cursor-pointer">
+                            <i class="fa-solid fa-globe text-emerald-800"></i>
+                            <span>সকল খবর</span>
+                            <span class="text-[10px] px-2 py-0.5 rounded-full font-bold ml-1 bg-black/10 text-black" x-text="newsList.length"></span>
+                        </button>
+
+                        <template x-for="cat in availableCategories()" :key="cat.id">
+                            <button @click="selectCategory(cat.id)"
+                                :class="selectedCategory === cat.id ? 'bg-emerald-500 text-black shadow-md scale-105 border-emerald-600' : 'bg-slate-100 text-black hover:bg-slate-200 border border-slate-300'"
+                                class="px-5 py-3 rounded-2xl text-xs sm:text-sm font-black whitespace-nowrap transition flex items-center space-x-2 cursor-pointer">
+                                <i :class="cat.icon" class="text-emerald-800"></i>
+                                <span x-text="lang === 'bn' ? cat.bn : cat.en"></span>
+                                <span class="text-[10px] px-2 py-0.5 rounded-full font-bold ml-1 bg-black/10 text-black" x-text="categoryCount(cat.id)"></span>
+                            </button>
+                        </template>
+                    </div>
+
+                    <!-- Search Box -->
+                    <div class="relative w-full lg:w-72">
+                        <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                        <input type="text" x-model="searchQuery" placeholder="খবর খুঁজুন..."
+                            class="w-full pl-11 pr-4 py-3.5 rounded-2xl border border-slate-300 bg-slate-50 text-sm font-bold text-black focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                    </div>
+                </div>
+
+                <!-- News Grid Cards -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     <template x-for="item in visibleNews()" :key="item.id">
-                        <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col shadow-lg">
-                            <div class="h-48 bg-slate-800 relative">
-                                <img x-show="item.image" :src="item.image" class="w-full h-full object-cover" @error="item.image = ''">
-                                <span class="absolute top-3 left-3 bg-slate-950/80 text-white text-xs font-bold px-3 py-1 rounded-lg" x-text="lang === 'bn' ? item.categoryBn : item.category"></span>
+                        <div @click="openModal(item)" class="news-card rounded-3xl overflow-hidden flex flex-col cursor-pointer group">
+                            <div class="h-48 w-full overflow-hidden relative bg-slate-200">
+                                <img x-show="item.image" :src="item.image" :alt="item.title" loading="lazy"
+                                     class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                                     @error="item.image = ''">
+                                <div x-show="!item.image" class="w-full h-full flex items-center justify-center bg-emerald-50">
+                                    <i class="text-4xl text-emerald-600" :class="categoryIcon(item.category)"></i>
+                                </div>
+                                <span class="absolute top-3 left-3 bg-slate-900 text-white text-[11px] font-black px-3 py-1 rounded-full shadow" x-text="lang === 'bn' ? item.categoryBn : categoryEn(item.category)"></span>
                             </div>
-                            <div class="p-5 flex flex-col flex-1">
-                                <h3 class="font-bold text-base mb-2 line-clamp-2 text-white" x-text="item.title"></h3>
-                                <p class="text-sm text-slate-400 line-clamp-2 mb-4 flex-1" x-text="item.summary"></p>
-                                <div class="flex items-center justify-between pt-4 border-t border-slate-800">
-                                    <span class="text-xs text-emerald-400 font-semibold" x-text="item.source"></span>
-                                    <button @click="openModal(item)" class="bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2 rounded-xl text-xs font-bold cursor-pointer shadow">
-                                        <span x-text="lang === 'bn' ? 'বিস্তারিত পড়ুন' : 'Read Full'"></span>
+                            <div class="p-6 flex flex-col flex-1">
+                                <h3 class="font-extrabold text-base sm:text-lg leading-snug mb-3 line-clamp-2 text-slate-900 group-hover:text-emerald-700 transition" x-text="item.title"></h3>
+                                <p class="text-sm text-slate-600 leading-relaxed line-clamp-2 mb-6 flex-1" x-text="item.summary"></p>
+                                <div class="flex items-center justify-between text-xs font-bold pt-4 border-t border-slate-100 mt-auto">
+                                    <span class="text-emerald-700 font-extrabold" x-text="item.source"></span>
+                                    <!-- Card Button with BLACK text -->
+                                    <button @click.stop="openModal(item)" class="bg-emerald-500 hover:bg-emerald-600 text-black font-black px-4 py-2 rounded-xl text-xs transition shadow-md cursor-pointer">
+                                        বিস্তারিত পড়ুন
                                     </button>
                                 </div>
                             </div>
@@ -100,70 +136,103 @@
                     </template>
                 </div>
 
-                <!-- Load More -->
-                <div class="flex justify-center mt-10" x-show="visibleCount < filteredNews().length">
-                    <button @click="visibleCount += 24" class="bg-emerald-600 hover:bg-emerald-500 text-white px-8 py-3.5 rounded-xl font-bold text-sm cursor-pointer shadow-lg">
-                        <span x-text="lang === 'bn' ? 'আরও খবর দেখুন' : 'Load More'"></span>
+                <!-- No Results State -->
+                <div x-show="filteredNews().length === 0" x-cloak class="text-center py-20 text-slate-500 font-bold">
+                    <i class="fa-solid fa-magnifying-glass text-4xl mb-3 text-slate-300"></i>
+                    <p>কোনো খবর পাওয়া যায়নি</p>
+                </div>
+
+                <!-- Load More Button -->
+                <div class="flex justify-center mt-12" x-show="visibleCount < filteredNews().length" x-cloak>
+                    <button @click="visibleCount += 24" class="bg-emerald-500 hover:bg-emerald-600 text-black font-black px-8 py-4 rounded-2xl text-sm transition shadow-lg cursor-pointer">
+                        আরও খবর দেখুন
                     </button>
                 </div>
             </div>
         </template>
     </main>
 
-    <!-- Modal Reader -->
-    <div x-show="activeArticle" x-cloak class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/90 backdrop-blur">
-        <div class="bg-slate-900 border border-slate-800 w-full max-w-3xl rounded-2xl shadow-2xl overflow-hidden max-h-[90vh] flex flex-col">
-            <div class="flex items-center justify-between px-6 py-4 border-b border-slate-800 bg-slate-950">
-                <span class="text-sm font-bold text-emerald-400" x-text="activeArticle ? activeArticle.source : ''"></span>
-                <button @click="closeModal()" class="bg-slate-800 hover:bg-slate-700 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold cursor-pointer">
-                    <i class="fa-solid fa-xmark"></i>
+    <!-- Footer -->
+    <footer class="border-t border-slate-200 mt-20 py-10 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm text-slate-600 space-y-1">
+            <p class="font-black text-slate-900">বাংলাদেশ নিউজ হাব — সমস্ত সংবাদ শতভাগ এই ওয়েবসাইটে পঠিত হয়।</p>
+            <p class="text-xs">কপিরাইট মুক্ত ও স্বাধীন ইন-সাইট নিউজ পোর্টাল।</p>
+        </div>
+    </footer>
+
+    <!-- Full In-Site Reader Modal -->
+    <div x-show="activeArticle" x-cloak class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-sm overflow-y-auto" @keydown.escape.window="closeModal()">
+        <div class="bg-white w-full max-w-3xl rounded-3xl shadow-2xl overflow-hidden max-h-[90vh] flex flex-col border border-slate-200 relative" @click.away="closeModal()">
+            <!-- Modal Header -->
+            <div class="flex items-center justify-between px-6 py-4 border-b border-slate-200 bg-slate-50">
+                <div class="flex items-center space-x-2">
+                    <span class="bg-emerald-600 text-white text-xs font-black px-3 py-1 rounded-full" x-text="activeArticle ? activeArticle.categoryBn : ''"></span>
+                    <span class="text-xs font-black text-emerald-800" x-text="activeArticle ? activeArticle.source : ''"></span>
+                </div>
+                <button @click="closeModal()" class="bg-slate-200 hover:bg-slate-300 text-black w-9 h-9 rounded-full flex items-center justify-center font-black transition cursor-pointer">
+                    <i class="fa-solid fa-xmark text-base"></i>
                 </button>
             </div>
-            <div class="p-6 overflow-y-auto space-y-4 flex-1 text-slate-200">
-                <h2 class="text-xl sm:text-2xl font-bold" x-text="activeArticle ? activeArticle.title : ''"></h2>
-                <div class="h-64 rounded-xl overflow-hidden bg-slate-800" x-show="activeArticle && activeArticle.image">
-                    <img :src="activeArticle ? activeArticle.image : ''" class="w-full h-full object-cover">
+            <!-- Modal Body -->
+            <div class="p-6 sm:p-8 overflow-y-auto space-y-6 flex-1 text-slate-900">
+                <h2 class="text-xl sm:text-2xl lg:text-3xl font-black leading-tight font-serif-title" x-text="activeArticle ? activeArticle.title : ''"></h2>
+                
+                <div class="flex items-center space-x-4 text-xs text-slate-500 font-bold pb-4 border-b border-slate-100">
+                    <span><i class="fa-regular fa-clock mr-1.5"></i> <span x-text="activeArticle ? activeArticle.pubDate : ''"></span></span>
+                    <span><i class="fa-solid fa-shield-halved mr-1.5 text-emerald-600"></i> বাংলাদেশ নিউজ হাব ভেরিফাইড ইন-সাইট নিউজ</span>
                 </div>
-                <div class="text-base leading-relaxed space-y-3" x-html="activeArticle ? (activeArticle.content || activeArticle.summary) : ''"></div>
+
+                <div class="h-64 sm:h-80 w-full rounded-2xl overflow-hidden shadow-md bg-slate-100" x-show="activeArticle && activeArticle.image">
+                    <img :src="activeArticle ? activeArticle.image : ''" :alt="activeArticle ? activeArticle.title : ''" class="w-full h-full object-cover">
+                </div>
+
+                <div class="prose max-w-none text-base sm:text-lg leading-relaxed space-y-4 font-normal" x-html="activeArticle ? (activeArticle.content || activeArticle.summary) : ''"></div>
             </div>
-            <div class="px-6 py-4 border-t border-slate-800 bg-slate-950 flex justify-end">
-                <button @click="closeModal()" class="bg-emerald-600 hover:bg-emerald-500 text-white px-6 py-2.5 rounded-xl font-bold text-sm cursor-pointer">
+            <!-- Modal Footer -->
+            <div class="px-6 py-4 bg-slate-50 border-t border-slate-200 flex items-center justify-between">
+                <span class="text-xs font-black text-emerald-700">✓ সম্পূর্ণ সংবাদ এই ওয়েবসাইটের ভেতরেই পঠিত</span>
+                <button @click="closeModal()" class="bg-emerald-500 hover:bg-emerald-600 text-black font-black px-6 py-2.5 rounded-xl text-sm transition shadow-md cursor-pointer">
                     বন্ধ করুন
                 </button>
             </div>
         </div>
     </div>
 
+    <!-- Alpine Script -->
     <script>
         function newsPortal() {
             return {
                 lang: 'bn',
-                darkMode: true,
                 loading: true,
                 newsList: [],
+                generatedAt: null,
                 selectedCategory: 'all',
                 searchQuery: '',
                 visibleCount: 24,
                 activeArticle: null,
+
                 categoryMeta: {
-                    national: { en: 'National', bn: 'জাতীয়' },
-                    politics: { en: 'Politics', bn: 'রাজনীতি' },
-                    international: { en: 'International', bn: 'আন্তর্জাতিক' },
-                    business: { en: 'Business', bn: 'বাণিজ্য' },
-                    sports: { en: 'Sports', bn: 'খেলাধুলা' },
-                    entertainment: { en: 'Entertainment', bn: 'বিনোদন' },
-                    technology: { en: 'Technology', bn: 'প্রযুক্তি' },
-                    education: { en: 'Education', bn: 'শিক্ষা' },
-                    health: { en: 'Health', bn: 'স্বাস্থ্য' },
-                    opinion: { en: 'Opinion', bn: 'মতামত' }
+                    national:      { en: 'National',        bn: 'জাতীয়',        icon: 'fa-solid fa-flag' },
+                    politics:      { en: 'Politics',        bn: 'রাজনীতি',      icon: 'fa-solid fa-landmark' },
+                    international: { en: 'International',   bn: 'আন্তর্জাতিক',  icon: 'fa-solid fa-earth-asia' },
+                    business:      { en: 'Business',        bn: 'বাণিজ্য',      icon: 'fa-solid fa-chart-line' },
+                    sports:        { en: 'Sports',          bn: 'খেলাধুলা',      icon: 'fa-solid fa-futbol' },
+                    entertainment: { en: 'Entertainment',   bn: 'বিনোদন',      icon: 'fa-solid fa-clapperboard' },
+                    technology:    { en: 'Technology',      bn: 'প্রযুক্তি',      icon: 'fa-solid fa-microchip' },
+                    education:     { en: 'Education',       bn: 'শিক্ষা',        icon: 'fa-solid fa-graduation-cap' },
+                    health:        { en: 'Health',          bn: 'স্বাস্থ্য',      icon: 'fa-solid fa-heart-pulse' },
+                    opinion:       { en: 'Opinion',         bn: 'মতামত',        icon: 'fa-solid fa-comment-dots' },
                 },
+
                 init() {
                     this.loadNews();
                 },
+
                 async loadNews() {
                     this.loading = true;
                     try {
                         const res = await fetch('data/news.json', { cache: 'no-store' });
+                        if (!res.ok) throw new Error('HTTP ' + res.status);
                         const data = await res.json();
                         this.newsList = Array.isArray(data.items) ? data.items : [];
                     } catch (e) {
@@ -172,26 +241,63 @@
                         this.loading = false;
                     }
                 },
-                openModal(item) { this.activeArticle = item; document.body.style.overflow = 'hidden'; },
-                closeModal() { this.activeArticle = null; document.body.style.overflow = 'auto'; },
-                get heroItem() { return this.newsList.length ? this.newsList[0] : null; },
-                selectCategory(id) { this.selectedCategory = id; this.visibleCount = 24; },
+
+                openModal(item) {
+                    if (!item) return;
+                    this.activeArticle = item;
+                    document.body.style.overflow = 'hidden';
+                },
+
+                closeModal() {
+                    this.activeArticle = null;
+                    document.body.style.overflow = 'auto';
+                },
+
+                get heroItem() {
+                    return this.newsList.length ? this.newsList[0] : null;
+                },
+
+                selectCategory(id) {
+                    this.selectedCategory = id;
+                    this.visibleCount = 24;
+                },
+
                 availableCategories() {
                     const present = new Set(this.newsList.map(n => n.category));
                     return Object.keys(this.categoryMeta)
                         .filter(id => present.has(id))
-                        .map(id => ({ id, en: this.categoryMeta[id].en, bn: this.categoryMeta[id].bn }));
+                        .map(id => ({
+                            id: id,
+                            en: this.categoryMeta[id].en,
+                            bn: this.categoryMeta[id].bn,
+                            icon: this.categoryMeta[id].icon
+                        }));
                 },
-                categoryCount(id) { return this.newsList.filter(n => n.category === id).length; },
+
+                categoryCount(id) {
+                    return this.newsList.filter(n => n.category === id).length;
+                },
+
+                categoryIcon(id) {
+                    return (this.categoryMeta[id] && this.categoryMeta[id].icon) || 'fa-solid fa-newspaper';
+                },
+
+                categoryEn(id) {
+                    return (this.categoryMeta[id] && this.categoryMeta[id].en) || id;
+                },
+
                 filteredNews() {
                     return this.newsList.filter(item => {
                         const matchesCat = this.selectedCategory === 'all' || item.category === this.selectedCategory;
                         const query = this.searchQuery.toLowerCase();
-                        const matchesSearch = !query || item.title.toLowerCase().includes(query);
+                        const matchesSearch = !query || item.title.toLowerCase().includes(query) || (item.summary && item.summary.toLowerCase().includes(query));
                         return matchesCat && matchesSearch;
                     });
                 },
-                visibleNews() { return this.filteredNews().slice(0, this.visibleCount); }
+
+                visibleNews() {
+                    return this.filteredNews().slice(0, this.visibleCount);
+                }
             }
         }
     </script>
