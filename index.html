@@ -234,16 +234,16 @@
                 activeArticle: null,
 
                 categoryMeta: {
-                    national:      { en: 'National',        icon: 'fa-solid fa-flag',            color: 'bg-emerald-700' },
-                    politics:      { en: 'Politics',        icon: 'fa-solid fa-landmark',         color: 'bg-slate-700' },
-                    international: { en: 'International',   icon: 'fa-solid fa-earth-asia',       color: 'bg-sky-700' },
-                    business:      { en: 'Business',        icon: 'fa-solid fa-chart-line',       color: 'bg-amber-700' },
-                    sports:        { en: 'Sports',          icon: 'fa-solid fa-futbol',           color: 'bg-orange-700' },
-                    entertainment: { en: 'Entertainment',   icon: 'fa-solid fa-clapperboard',     color: 'bg-pink-700' },
-                    technology:    { en: 'Technology',      icon: 'fa-solid fa-microchip',        color: 'bg-indigo-700' },
-                    education:     { en: 'Education',       icon: 'fa-solid fa-graduation-cap',   color: 'bg-teal-700' },
-                    health:        { en: 'Health',          icon: 'fa-solid fa-heart-pulse',      color: 'bg-rose-700' },
-                    opinion:       { en: 'Opinion',         icon: 'fa-solid fa-comment-dots',     color: 'bg-purple-700' },
+                    national:      { en: 'National',        bn: 'জাতীয়',        icon: 'fa-solid fa-flag',            color: 'bg-emerald-700' },
+                    politics:      { en: 'Politics',        bn: 'রাজনীতি',      icon: 'fa-solid fa-landmark',         color: 'bg-slate-700' },
+                    international: { en: 'International',   bn: 'আন্তর্জাতিক',  icon: 'fa-solid fa-earth-asia',       color: 'bg-sky-700' },
+                    business:      { en: 'Business',        bn: 'বাণিজ্য',      icon: 'fa-solid fa-chart-line',       color: 'bg-amber-700' },
+                    sports:        { en: 'Sports',          bn: 'খেলাধুলা',      icon: 'fa-solid fa-futbol',           color: 'bg-orange-700' },
+                    entertainment: { en: 'Entertainment',   bn: 'বিনোদেন',      icon: 'fa-solid fa-clapperboard',     color: 'bg-pink-700' },
+                    technology:    { en: 'Technology',      bn: 'প্রযুক্তি',      icon: 'fa-solid fa-microchip',        color: 'bg-indigo-700' },
+                    education:     { en: 'Education',       bn: 'শিক্ষা',        icon: 'fa-solid fa-graduation-cap',   color: 'bg-teal-700' },
+                    health:        { en: 'Health',          bn: 'স্বাস্থ্য',      icon: 'fa-solid fa-heart-pulse',      color: 'bg-rose-700' },
+                    opinion:       { en: 'Opinion',         bn: 'মতামত',        icon: 'fa-solid fa-comment-dots',     color: 'bg-purple-700' },
                 },
 
                 init() {
@@ -295,7 +295,7 @@
                         .map(id => ({
                             id: id,
                             en: this.categoryMeta[id].en,
-                            bn: (this.newsList.find(n => n.category === id) || {}).categoryBn || id,
+                            bn: this.categoryMeta[id].bn || id,
                             icon: this.categoryMeta[id].icon
                         }));
                 },
