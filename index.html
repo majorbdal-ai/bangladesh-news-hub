@@ -16,16 +16,16 @@
         body { font-family: 'Hind Siliguri', 'Plus Jakarta Sans', sans-serif; }
         .font-serif-title { font-family: 'Playfair Display', 'Hind Siliguri', serif; }
         [x-cloak] { display: none !important; }
-        .hero-gradient { background: linear-gradient(135deg, #022c22 0%, #064e3b 50%, #0f172a 100%); }
-        .elite-card { background: #ffffff; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); transition: all 0.3s ease; }
-        .dark .elite-card { background: #111827; border: 1px solid #1f2937; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.2); }
-        .elite-card:hover { transform: translateY(-4px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); }
+        .hero-banner-gradient { background: linear-gradient(135deg, #064e3b 0%, #022c22 50%, #0f172a 100%); }
+        .news-card { background: #ffffff; border: 1px solid #e2e8f0; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05); transition: all 0.3s ease; }
+        .dark .news-card { background: #111827; border: 1px solid #1f2937; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3); }
+        .news-card:hover { transform: translateY(-5px); box-shadow: 0 20px 35px -10px rgba(16, 185, 129, 0.15); }
     </style>
 </head>
-<body class="bg-slate-100 text-slate-900 dark:bg-slate-950 dark:text-slate-100 min-h-screen flex flex-col transition-colors duration-300" :class="{ 'dark': darkMode }" x-data="newsPortal()">
+<body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 min-h-screen flex flex-col transition-colors duration-300" :class="{ 'dark': darkMode }" x-data="newsPortal()">
 
     <!-- Header -->
-    <header class="sticky top-0 z-40 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 shadow-sm">
+    <header class="sticky top-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <!-- Brand Logo & Title -->
             <div class="flex items-center space-x-3 sm:space-x-4 cursor-pointer" @click="selectedCategory = 'all'; searchQuery = ''">
@@ -42,22 +42,22 @@
                 </div>
             </div>
 
-            <!-- Controls (Language, Theme, Live Sync) -->
+            <!-- Button Problem Area 1: Header Control Buttons -->
             <div class="flex items-center space-x-2 sm:space-x-3">
                 <!-- Live Sync Button -->
-                <button @click="loadNews()" :disabled="loading" class="bg-emerald-600 hover:bg-emerald-700 disabled:opacity-50 text-white px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition flex items-center space-x-2 shadow-lg shadow-emerald-600/20 active:scale-95 cursor-pointer">
+                <button @click="loadNews()" :disabled="loading" class="bg-emerald-600 hover:bg-emerald-700 disabled:opacity-50 text-white px-4 py-2.5 rounded-xl text-xs sm:text-sm font-extrabold transition flex items-center space-x-2 shadow-md shadow-emerald-600/20 active:scale-95 cursor-pointer">
                     <i class="fa-solid fa-rotate" :class="{ 'fa-spin': loading }"></i>
                     <span x-text="lang === 'bn' ? (loading ? 'সিংক হচ্ছে...' : 'রিয়েল-টাইম সিংক') : (loading ? 'Syncing...' : 'Live Sync')">রিয়েল-টাইম সিংক</span>
                 </button>
 
-                <!-- Language Toggle -->
-                <button @click="lang = lang === 'bn' ? 'en' : 'bn'" class="bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition flex items-center space-x-1.5 cursor-pointer">
+                <!-- Language Toggle Button -->
+                <button @click="lang = lang === 'bn' ? 'en' : 'bn'" class="bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-900 dark:text-white px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-extrabold transition flex items-center space-x-1.5 cursor-pointer shadow-sm">
                     <i class="fa-solid fa-globe text-emerald-600"></i>
                     <span x-text="lang === 'bn' ? 'English' : 'বাংলা'">English</span>
                 </button>
 
-                <!-- Dark Mode Toggle -->
-                <button @click="darkMode = !darkMode" class="bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 w-10 h-10 rounded-xl flex items-center justify-center font-bold transition cursor-pointer">
+                <!-- Dark Mode Toggle Button -->
+                <button @click="darkMode = !darkMode" class="bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-900 dark:text-white w-10 h-10 rounded-xl flex items-center justify-center font-extrabold transition cursor-pointer shadow-sm">
                     <i class="fa-solid" :class="darkMode ? 'fa-sun text-amber-400' : 'fa-moon text-slate-700'"></i>
                 </button>
             </div>
@@ -75,46 +75,52 @@
 
         <template x-if="!loading">
             <div>
-                <!-- Hero Featured News Banner -->
-                <div class="hero-gradient rounded-3xl p-6 sm:p-10 lg:p-14 text-white mb-10 relative overflow-hidden shadow-2xl" x-show="heroItem" x-cloak>
+                <!-- Button Problem Area 2: Hero Featured Banner -->
+                <div class="hero-banner-gradient rounded-3xl p-6 sm:p-10 lg:p-14 text-white mb-10 relative overflow-hidden shadow-2xl border border-emerald-500/20" x-show="heroItem" x-cloak>
                     <div class="relative z-10 max-w-3xl">
                         <div class="flex items-center flex-wrap gap-3 mb-4">
-                            <span class="bg-emerald-500 text-slate-950 text-xs font-extrabold px-3.5 py-1 rounded-full uppercase tracking-wider">
-                                <i class="fa-solid fa-star mr-1"></i> <span x-text="lang === 'bn' ? 'প্রধান সংবাদ' : 'Featured News'"></span>
+                            <span class="bg-emerald-500 text-slate-950 text-xs font-black px-3.5 py-1.5 rounded-full uppercase tracking-wider shadow">
+                                <i class="fa-solid fa-star mr-1"></i> <span x-text="lang === 'bn' ? 'প্রধান সংবাদ' : 'Featured News'">প্রধান সংবাদ</span>
                             </span>
-                            <span class="text-xs text-slate-300 font-medium">
-                                <i class="fa-regular fa-clock mr-1"></i> <span x-text="heroItem ? timeAgo(heroItem.pubDate) : ''"></span>
+                            <span class="text-xs text-slate-200 font-semibold bg-slate-900/40 px-3 py-1 rounded-full">
+                                <i class="fa-regular fa-clock mr-1 text-emerald-400"></i> <span x-text="heroItem ? timeAgo(heroItem.pubDate) : ''"></span>
                             </span>
-                            <span class="text-xs text-emerald-300 font-bold" x-text="heroItem ? heroItem.source : ''"></span>
+                            <span class="text-xs text-emerald-300 font-bold bg-emerald-950/60 px-3 py-1 rounded-full" x-text="heroItem ? heroItem.source : ''"></span>
                         </div>
                         <h2 class="text-xl sm:text-3xl lg:text-4xl font-extrabold font-serif-title leading-tight mb-4" x-text="heroItem ? heroItem.title : ''"></h2>
                         <p class="text-slate-200 text-sm sm:text-base leading-relaxed font-normal mb-8 max-w-2xl line-clamp-3" x-text="heroItem ? heroItem.summary : ''"></p>
                         
-                        <!-- Hero In-Site Read Button -->
-                        <button @click="openModal(heroItem)" class="inline-flex bg-white text-slate-900 hover:bg-emerald-50 px-8 py-3.5 rounded-2xl text-sm font-extrabold transition shadow-xl items-center space-x-2 cursor-pointer active:scale-95">
-                            <span x-text="lang === 'bn' ? 'সম্পূর্ণ সংবাদ পড়ুন' : 'Read Full Report'"></span>
-                            <i class="fa-solid fa-book-open text-xs ml-2 text-emerald-600"></i>
+                        <!-- Redesigned Hero CTA Button -->
+                        <button @click="openModal(heroItem)" class="inline-flex bg-white hover:bg-emerald-50 text-slate-900 px-8 py-4 rounded-2xl text-sm sm:text-base font-black transition shadow-2xl items-center space-x-3 cursor-pointer active:scale-95 group border-2 border-white">
+                            <span x-text="lang === 'bn' ? 'সম্পূর্ণ সংবাদ পড়ুন (ইন-সাইট)' : 'Read Full Report (In-Site)'">সম্পূর্ণ সংবাদ পড়ুন</span>
+                            <div class="w-8 h-8 rounded-xl bg-emerald-600 text-white flex items-center justify-center group-hover:bg-emerald-700 transition">
+                                <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </div>
                         </button>
                     </div>
                 </div>
 
-                <!-- Category Filters & Search Bar -->
+                <!-- Button Problem Area 3: Category Filter Pills & Search -->
                 <div class="flex flex-col lg:flex-row gap-6 justify-between items-center mb-10 bg-white dark:bg-slate-900 p-5 lg:p-6 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-xl">
-                    <!-- Categories -->
-                    <div class="flex items-center space-x-2.5 overflow-x-auto pb-2 lg:pb-0 w-full lg:w-auto scrollbar-none">
+                    <!-- Category Buttons -->
+                    <div class="flex items-center space-x-3 overflow-x-auto pb-2 lg:pb-0 w-full lg:w-auto scrollbar-none">
                         <button @click="selectCategory('all')"
-                            :class="selectedCategory === 'all' ? 'bg-emerald-600 text-white shadow-lg shadow-emerald-600/30 border-emerald-600 scale-105' : 'bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-700 border border-slate-300 dark:border-slate-700'"
-                            class="px-5 py-3 rounded-2xl text-xs sm:text-sm font-extrabold whitespace-nowrap transition-all duration-300 flex items-center space-x-2 cursor-pointer">
-                            <i class="fa-solid fa-globe"></i>
+                            :class="selectedCategory === 'all' ? 'bg-slate-900 dark:bg-emerald-600 text-white shadow-lg shadow-slate-900/30 scale-105' : 'bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-700 border border-slate-300 dark:border-slate-700'"
+                            class="px-5 py-3 rounded-2xl text-xs sm:text-sm font-black whitespace-nowrap transition-all duration-300 flex items-center space-x-2.5 cursor-pointer">
+                            <span class="w-6 h-6 rounded-lg flex items-center justify-center" :class="selectedCategory === 'all' ? 'bg-white/20 text-white' : 'bg-emerald-600 text-white'">
+                                <i class="fa-solid fa-globe text-xs"></i>
+                            </span>
                             <span x-text="lang === 'bn' ? 'সকল খবর' : 'All News'">সকল খবর</span>
                             <span class="text-[10px] px-2 py-0.5 rounded-full font-bold ml-1" :class="selectedCategory === 'all' ? 'bg-white/20 text-white' : 'bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200'" x-text="newsList.length"></span>
                         </button>
 
                         <template x-for="cat in availableCategories()" :key="cat.id">
                             <button @click="selectCategory(cat.id)"
-                                :class="selectedCategory === cat.id ? 'bg-emerald-600 text-white shadow-lg shadow-emerald-600/30 border-emerald-600 scale-105' : 'bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-700 border border-slate-300 dark:border-slate-700'"
-                                class="px-5 py-3 rounded-2xl text-xs sm:text-sm font-extrabold whitespace-nowrap transition-all duration-300 flex items-center space-x-2 cursor-pointer">
-                                <i :class="cat.icon"></i>
+                                :class="selectedCategory === cat.id ? 'bg-slate-900 dark:bg-emerald-600 text-white shadow-lg shadow-slate-900/30 scale-105' : 'bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-700 border border-slate-300 dark:border-slate-700'"
+                                class="px-5 py-3 rounded-2xl text-xs sm:text-sm font-black whitespace-nowrap transition-all duration-300 flex items-center space-x-2.5 cursor-pointer">
+                                <span class="w-6 h-6 rounded-lg flex items-center justify-center" :class="selectedCategory === cat.id ? 'bg-white/20 text-white' : 'bg-emerald-600 text-white'">
+                                    <i :class="cat.icon" class="text-xs"></i>
+                                </span>
                                 <span x-text="lang === 'bn' ? cat.bn : cat.en"></span>
                                 <span class="text-[10px] px-2 py-0.5 rounded-full font-bold ml-1" :class="selectedCategory === cat.id ? 'bg-white/20 text-white' : 'bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200'" x-text="categoryCount(cat.id)"></span>
                             </button>
@@ -125,30 +131,31 @@
                     <div class="relative w-full lg:w-72">
                         <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
                         <input type="text" x-model="searchQuery" :placeholder="lang === 'bn' ? 'খবর খুঁজুন...' : 'Search news...'"
-                            class="w-full pl-11 pr-4 py-3.5 rounded-2xl border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                            class="w-full pl-11 pr-4 py-3.5 rounded-2xl border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-sm font-bold focus:outline-none focus:ring-2 focus:ring-emerald-500">
                     </div>
                 </div>
 
                 <!-- News Grid Cards -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     <template x-for="item in visibleNews()" :key="item.id">
-                        <div @click="openModal(item)" class="elite-card rounded-3xl overflow-hidden flex flex-col cursor-pointer group">
-                            <div class="h-48 w-full overflow-hidden relative bg-slate-200 dark:bg-slate-800">
+                        <div @click="openModal(item)" class="news-card rounded-3xl overflow-hidden flex flex-col cursor-pointer group">
+                            <div class="h-52 w-full overflow-hidden relative bg-slate-200 dark:bg-slate-800">
                                 <img x-show="item.image" :src="item.image" :alt="item.title" loading="lazy"
                                      class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
                                      @error="item.image = ''">
                                 <div x-show="!item.image" class="w-full h-full flex items-center justify-center bg-emerald-900/20">
                                     <i class="text-4xl text-emerald-600" :class="categoryIcon(item.category)"></i>
                                 </div>
-                                <span class="absolute top-3 left-3 bg-slate-950/80 backdrop-blur text-white text-[11px] font-bold px-3 py-1 rounded-full shadow" x-text="lang === 'bn' ? item.categoryBn : categoryEn(item.category)"></span>
+                                <span class="absolute top-3 left-3 bg-slate-950/80 backdrop-blur text-white text-[11px] font-extrabold px-3.5 py-1.5 rounded-full shadow" x-text="lang === 'bn' ? item.categoryBn : categoryEn(item.category)"></span>
                             </div>
                             <div class="p-6 flex flex-col flex-1">
-                                <h3 class="font-bold text-base sm:text-lg leading-snug mb-3 line-clamp-2 group-hover:text-emerald-600 transition" x-text="item.title"></h3>
+                                <h3 class="font-extrabold text-base sm:text-lg leading-snug mb-3 line-clamp-2 group-hover:text-emerald-600 transition" x-text="item.title"></h3>
                                 <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed line-clamp-2 mb-6 flex-1" x-text="item.summary"></p>
-                                <div class="flex items-center justify-between text-xs font-semibold pt-4 border-t border-slate-100 dark:border-slate-800 mt-auto">
-                                    <span class="text-emerald-600 dark:text-emerald-400 font-bold" x-text="item.source"></span>
-                                    <button @click.stop="openModal(item)" class="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-xl text-xs font-extrabold transition shadow-md cursor-pointer">
+                                <div class="flex items-center justify-between text-xs font-bold pt-4 border-t border-slate-100 dark:border-slate-800 mt-auto">
+                                    <span class="text-emerald-600 dark:text-emerald-400" x-text="item.source"></span>
+                                    <button @click.stop="openModal(item)" class="bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-2.5 rounded-xl text-xs font-black transition shadow-md cursor-pointer flex items-center space-x-1.5">
                                         <span x-text="lang === 'bn' ? 'বিস্তারিত পড়ুন' : 'Read Full'"></span>
+                                        <i class="fa-solid fa-arrow-right text-[10px]"></i>
                                     </button>
                                 </div>
                             </div>
@@ -164,9 +171,9 @@
 
                 <!-- Load More Button -->
                 <div class="flex justify-center mt-12" x-show="visibleCount < filteredNews().length" x-cloak>
-                    <button @click="visibleCount += 24" class="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-2xl text-sm font-extrabold transition shadow-xl shadow-emerald-600/20 cursor-pointer">
+                    <button @click="visibleCount += 24" class="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-2xl text-sm font-black transition shadow-xl shadow-emerald-600/20 cursor-pointer flex items-center space-x-2">
                         <span x-text="lang === 'bn' ? 'আরও খবর দেখুন' : 'Load More News'"></span>
-                        <i class="fa-solid fa-chevron-down ml-2 text-xs"></i>
+                        <i class="fa-solid fa-chevron-down text-xs"></i>
                     </button>
                 </div>
             </div>
@@ -187,7 +194,7 @@
             <!-- Modal Header -->
             <div class="flex items-center justify-between px-6 py-4 border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50">
                 <div class="flex items-center space-x-2">
-                    <span class="bg-emerald-600 text-white text-xs font-bold px-3 py-1 rounded-full" x-text="lang === 'bn' ? (activeArticle ? activeArticle.categoryBn : '') : (activeArticle ? activeArticle.category : '')"></span>
+                    <span class="bg-emerald-600 text-white text-xs font-extrabold px-3 py-1 rounded-full" x-text="lang === 'bn' ? (activeArticle ? activeArticle.categoryBn : '') : (activeArticle ? activeArticle.category : '')"></span>
                     <span class="text-xs font-bold text-emerald-600 dark:text-emerald-400" x-text="activeArticle ? activeArticle.source : ''"></span>
                 </div>
                 <button @click="closeModal()" class="bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 text-slate-800 dark:text-white w-9 h-9 rounded-full flex items-center justify-center font-bold transition cursor-pointer">
@@ -198,7 +205,7 @@
             <div class="p-6 sm:p-8 overflow-y-auto space-y-6 flex-1 text-slate-800 dark:text-slate-100">
                 <h2 class="text-xl sm:text-2xl lg:text-3xl font-extrabold leading-tight font-serif-title" x-text="activeArticle ? activeArticle.title : ''"></h2>
                 
-                <div class="flex items-center space-x-4 text-xs text-slate-500 dark:text-slate-400 font-medium pb-4 border-b border-slate-100 dark:border-slate-800">
+                <div class="flex items-center space-x-4 text-xs text-slate-500 dark:text-slate-400 font-semibold pb-4 border-b border-slate-100 dark:border-slate-800">
                     <span><i class="fa-regular fa-clock mr-1.5"></i> <span x-text="activeArticle ? activeArticle.pubDate : ''"></span></span>
                     <span><i class="fa-solid fa-shield-halved mr-1.5 text-emerald-600"></i> <span x-text="lang === 'bn' ? 'বাংলাদেশ নিউজ হাব ভেরিফাইড ইন-সাইট নিউজ' : 'Verified In-Site Report'"></span></span>
                 </div>
@@ -211,7 +218,7 @@
             </div>
             <!-- Modal Footer -->
             <div class="px-6 py-4 bg-slate-50 dark:bg-slate-800/50 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between">
-                <span class="text-xs font-bold text-emerald-600 dark:text-emerald-400" x-text="lang === 'bn' ? '✓ সম্পূর্ণ সংবাদ এই ওয়েবসাইটের ভেতরেই পঠিত' : '✓ Full news read entirely on-site'"></span>
+                <span class="text-xs font-extrabold text-emerald-600 dark:text-emerald-400" x-text="lang === 'bn' ? '✓ সম্পূর্ণ সংবাদ এই ওয়েবসাইটের ভেতরেই পঠিত' : '✓ Full news read entirely on-site'"></span>
                 <button @click="closeModal()" class="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-2.5 rounded-xl text-sm font-extrabold transition shadow-md cursor-pointer">
                     <span x-text="lang === 'bn' ? 'বন্ধ করুন' : 'Close'"></span>
                 </button>
@@ -239,7 +246,7 @@
                     international: { en: 'International',   bn: 'আন্তর্জাতিক',  icon: 'fa-solid fa-earth-asia',       color: 'bg-sky-700' },
                     business:      { en: 'Business',        bn: 'বাণিজ্য',      icon: 'fa-solid fa-chart-line',       color: 'bg-amber-700' },
                     sports:        { en: 'Sports',          bn: 'খেলাধুলা',      icon: 'fa-solid fa-futbol',           color: 'bg-orange-700' },
-                    entertainment: { en: 'Entertainment',   bn: 'বিনোদেন',      icon: 'fa-solid fa-clapperboard',     color: 'bg-pink-700' },
+                    entertainment: { en: 'Entertainment',   bn: 'বিনোদন',      icon: 'fa-solid fa-clapperboard',     color: 'bg-pink-700' },
                     technology:    { en: 'Technology',      bn: 'প্রযুক্তি',      icon: 'fa-solid fa-microchip',        color: 'bg-indigo-700' },
                     education:     { en: 'Education',       bn: 'শিক্ষা',        icon: 'fa-solid fa-graduation-cap',   color: 'bg-teal-700' },
                     health:        { en: 'Health',          bn: 'স্বাস্থ্য',      icon: 'fa-solid fa-heart-pulse',      color: 'bg-rose-700' },
@@ -295,7 +302,7 @@
                         .map(id => ({
                             id: id,
                             en: this.categoryMeta[id].en,
-                            bn: this.categoryMeta[id].bn || id,
+                            bn: this.categoryMeta[id].bn,
                             icon: this.categoryMeta[id].icon
                         }));
                 },
