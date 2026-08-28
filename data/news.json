@@ -1,6 +1,67 @@
 {
-  "generatedAt": "2026-08-28T18:00:00.000Z",
-  "totalSources": 0,
-  "count": 0,
-  "items": []
+  "generatedAt": "2026-08-28T22:30:00.000Z",
+  "totalSources": 1,
+  "count": 4,
+  "items": [
+    {
+      "id": 1724854500000,
+      "title": "ঢাকায় নতুন মেট্রোরেল প্রকল্প অনুমোদন",
+      "category": "bangladesh",
+      "categoryBn": "বাংলাদেশ",
+      "subCategory": "রাজধানী",
+      "status": "BREAKING",
+      "author": "নিউজ ডেস্ক",
+      "pubDate": "2026-08-28T22:15:00.000Z",
+      "readTime": "৩ মিনিট",
+      "summary": "রাজধানীর যোগাযোগ ব্যবস্থাকে আরও আধুনিক ও জনবান্ধব করতে নতুন একটি মেট্রোরেল লাইন নির্মাণের চূড়ান্ত অনুমোদন দেওয়া হয়েছে।",
+      "content": "<div class=\"space-y-4 text-slate-800 dark:text-slate-200 text-base leading-relaxed font-normal\"><p class=\"font-bold text-slate-900 dark:text-white pb-2 border-b border-slate-200 dark:border-slate-800\"><strong>ঢাকা, ২৮ আগস্ট, ২০২৬:</strong> রাজধানীর যোগাযোগ ব্যবস্থাকে আরও আধুনিক ও জনবান্ধব করতে নতুন একটি মেট্রোরেল লাইন নির্মাণের চূড়ান্ত অনুমোদন দেওয়া হয়েছে।</p><p>সংশ্লিষ্ট সূত্রে জানা গেছে, সাম্প্রতিক সময়ে যানজট নিরসনে এই রুটটি অত্যন্ত গুরুত্বপূর্ণ ভূমিকা পালন করবে। পরিকল্পনা অনুযায়ী নির্ধারিত সময়ের মধ্যে এর প্রাতিষ্ঠানিক ও নির্মাণ কাজ শুরু হবে।</p><blockquote class=\"border-l-4 border-emerald-600 bg-emerald-50 dark:bg-emerald-950/40 p-4 rounded-r-2xl italic text-slate-700 dark:text-slate-300\">“নতুন এই মেট্রোরেল চালিত হলে ঢাকার ট্রাফিক সিস্টেমে অভূতপূর্ব পরিবর্তন আসবে এবং সাধারণ যাত্রীদের যাতায়াত হবে আরও দ্রুত ও আরামদায়ক।” — <strong>পরিবহন বিশেষজ্ঞ</strong></blockquote><p>বিশ্লেষকদের মতে, এই মেগা প্রকল্পের ফলে দীর্ঘমেয়াদে রাজধানীর গণপরিবহন খাতের ওপর চাপ কমবে এবং অর্থনীতিতে গতি আসবে।</p><p class=\"font-semibold text-emerald-700 dark:text-emerald-400 pt-2 border-t border-slate-200 dark:border-slate-800\">খুব শীঘ্রই এই প্রকল্পের ভূমি অধিগ্রহণ ও প্রাক-নির্মাণ কাজ আনুষ্ঠানিকভাবে শুরু হবে।</p><div class=\"flex items-center justify-between text-xs text-slate-500 pt-2\"><span><i class=\"fa-solid fa-user-pen mr-1\"></i> লেখক: নিউজ ডেস্ক | স্থিতি: BREAKING</span><span>রাজধানী, বাংলাদেশ</span></div></div>",
+      "image": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80",
+      "source": "বাংলাদেশ নিউজ হাব (স্বতন্ত্র ডেস্ক)"
+    },
+    {
+      "id": 1724850900000,
+      "title": "দেশজুড়ে সোলার পাওয়ার প্লান্ট স্থাপনে বড় বিনিয়োগের ঘোষণা",
+      "category": "economy",
+      "categoryBn": "অর্থনীতি ও ব্যবসা",
+      "subCategory": "অর্থনীতি",
+      "status": "UPDATE",
+      "author": "নিউজ ডেস্ক",
+      "pubDate": "2026-08-28T21:15:00.000Z",
+      "readTime": "৪ মিনিট",
+      "summary": "পরিবেশবান্ধব ও টেকসই বিদ্যুৎ উৎপাদন নিশ্চিত করতে দেশের বিভিন্ন অঞ্চলে নতুন সোলার পাওয়ার প্লান্ট স্থাপনের ঘোষণা দেওয়া হয়েছে।",
+      "content": "<div class=\"space-y-4 text-slate-800 dark:text-slate-200 text-base leading-relaxed font-normal\"><p class=\"font-bold text-slate-900 dark:text-white pb-2 border-b border-slate-200 dark:border-slate-800\"><strong>ঢাকা, ২৮ আগস্ট, ২০২৬:</strong> পরিবেশবান্ধব ও টেকসই বিদ্যুৎ উৎপাদন নিশ্চিত করতে দেশের বিভিন্ন অঞ্চলে নতুন সোলার পাওয়ার প্লান্ট স্থাপনের ঘোষণা দেওয়া হয়েছে।</p><p>বিদ্যুৎ ও জ্বালানি খাতের ওপর চাপ কমাতে নবায়নযোগ্য জ্বালানির ব্যবহার বাড়ানোর এই উদ্যোগে দেশি ও আন্তর্জাতিক বিনিয়োগকারীরা অংশ নিচ্ছেন।</p><blockquote class=\"border-l-4 border-emerald-600 bg-emerald-50 dark:bg-emerald-950/40 p-4 rounded-r-2xl italic text-slate-700 dark:text-slate-300\">“সবুজ শক্তির প্রসারে এই বড় বিনিয়োগ দেশের বিদ্যুৎ সুরক্ষায় মাইলফলক হয়ে থাকবে।” — <strong>জ্বালানি বিশেষজ্ঞ</strong></blockquote><p>এর ফলে গ্রামীণ জনপদে নিরবচ্ছিন্ন বিদ্যুৎ সরবরাহ নিশ্চিত হবে এবং কার্বন নিঃসরণ উল্লেখযোগ্য হারে হ্রাস পাবে।</p><p class=\"font-semibold text-emerald-700 dark:text-emerald-400 pt-2 border-t border-slate-200 dark:border-slate-800\">চলতি অর্থবছর শেষ হওয়ার আগেই প্রথম ধাপের প্লান্টগুলোর উৎপাদন শুরু হওয়ার কথা রয়েছে।</p><div class=\"flex items-center justify-between text-xs text-slate-500 pt-2\"><span><i class=\"fa-solid fa-user-pen mr-1\"></i> লেখক: নিউজ ডেস্ক | স্থিতি: UPDATE</span><span>অর্থনীতি, বাংলাদেশ</span></div></div>",
+      "image": "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=1200&q=80",
+      "source": "বাংলাদেশ নিউজ হাব (স্বতন্ত্র ডেস্ক)"
+    },
+    {
+      "id": 1724847300000,
+      "title": "জাতীয় ক্রিকেট দলের আসন্ন সিরিজ সামনে রেখে অনুশীলন শুরু",
+      "category": "sports",
+      "categoryBn": "খেলাধুলা",
+      "subCategory": "ক্রিকেট",
+      "status": "FEATURED",
+      "author": "ক্রীড়া ডেস্ক",
+      "pubDate": "2026-08-28T20:15:00.000Z",
+      "readTime": "৩ মিনিট",
+      "summary": "আসন্ন আন্তর্জাতিক ক্রিকেট সিরিজকে সামনে রেখে মিরপুর শেরেবাংলা জাতীয় ক্রিকেট স্টেডিয়ামে কঠোর অনুশীলন শুরু করেছে জাতীয় দলের ক্রিকেটাররা।",
+      "content": "<div class=\"space-y-4 text-slate-800 dark:text-slate-200 text-base leading-relaxed font-normal\"><p class=\"font-bold text-slate-900 dark:text-white pb-2 border-b border-slate-200 dark:border-slate-800\"><strong>ঢাকা, ২৮ আগস্ট, ২০২৬:</strong> আসন্ন আন্তর্জাতিক ক্রিকেট সিরিজকে সামনে রেখে মিরপুর শেরেবাংলা জাতীয় ক্রিকেট স্টেডিয়ামে কঠোর অনুশীলন শুরু করেছে জাতীয় দলের ক্রিকেটাররা।</p><p>ব্যাটিং, বোলিং এবং ফিল্ডিংয়ে নিজেদের ভুলত্রুটি শুধরে নিতে কোচিং স্টাফদের তত্ত্বাবধানে ঘাম ঝরাচ্ছেন টাইগাররা। দলের খেলোয়াড়দের ফিটনেস ও ফর্ম নিয়ে সন্তোষ প্রকাশ করেছেন কোচ।</p><blockquote class=\"border-l-4 border-emerald-600 bg-emerald-50 dark:bg-emerald-950/40 p-4 rounded-r-2xl italic text-slate-700 dark:text-slate-300\">“আমাদের মূল লক্ষ্য সিরিজ জয় করা। দলের সবাই পূর্ণ প্রস্তুতি নিয়ে মাঠে নামতে প্রস্তুত।” — <strong>দলের সিনিয়র ক্রিকেটার</strong></blockquote><p>ক্রিকেটপ্রেমীদের মধ্যে আসন্ন এই সিরিজ ঘিরে ব্যাপক উৎসাহ ও উদ্দীপনা লক্ষ করা যাচ্ছে। টিকিটের বিষয়েও শীঘ্রই ঘোষণা আসবে।</p><p class=\"font-semibold text-emerald-700 dark:text-emerald-400 pt-2 border-t border-slate-200 dark:border-slate-800\">আগামী সপ্তাহে সিরিজের প্রথম ম্যাচ অনুষ্ঠিত হওয়ার কথা রয়েছে।</p><div class=\"flex items-center justify-between text-xs text-slate-500 pt-2\"><span><i class=\"fa-solid fa-user-pen mr-1\"></i> লেখক: ক্রীড়া ডেস্ক | স্থিতি: FEATURED</span><span>খেলাধুলা, বাংলাদেশ</span></div></div>",
+      "image": "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=1200&q=80",
+      "source": "বাংলাদেশ নিউজ হাব (স্বতন্ত্র ডেস্ক)"
+    },
+    {
+      "id": 1724843700000,
+      "title": "কৃত্রিম বুদ্ধিমত্তা (AI) শিক্ষায় তরুণদের জন্য জাতীয় কর্মশালা",
+      "category": "technology",
+      "categoryBn": "প্রযুক্তি",
+      "subCategory": "AI",
+      "status": "TRENDING",
+      "author": "টেক ডেস্ক",
+      "pubDate": "2026-08-28T19:15:00.000Z",
+      "readTime": "৫ মিনিট",
+      "summary": "ভবিষ্যতের প্রযুক্তি বাজারে নিজেদের অবস্থান শক্ত করতে কৃত্রিম বুদ্ধিমত্তা ও মেশিন লার্নিং বিষয়ের ওপর রাজধানীতে এক বিশাল জাতীয় কর্মশালা অনুষ্ঠিত হয়েছে।",
+      "content": "<div class=\"space-y-4 text-slate-800 dark:text-slate-200 text-base leading-relaxed font-normal\"><p class=\"font-bold text-slate-900 dark:text-white pb-2 border-b border-slate-200 dark:border-slate-800\"><strong>ঢাকা, ২৮ আগস্ট, ২০২৬:</strong> ভবিষ্যতের প্রযুক্তি বাজারে নিজেদের অবস্থান শক্ত করতে কৃত্রিম বুদ্ধিমত্তা ও মেশিন লার্নিং বিষয়ের ওপর রাজধানীতে এক বিশাল জাতীয় কর্মশালা অনুষ্ঠিত হয়েছে।</p><p>দেশের শীর্ষস্থানীয় প্রযুক্তিবিদ ও বিশ্ববিদ্যালয়ের শিক্ষার্থীরা এই কর্মশালায় অংশ নিয়ে এআই প্রযুক্তির ব্যবহার ও এর নানামুখী প্রয়োগ সম্পর্কে হাতেকলমে প্রশিক্ষণ নিয়েছেন।</p><blockquote class=\"border-l-4 border-emerald-600 bg-emerald-50 dark:bg-emerald-950/40 p-4 rounded-r-2xl italic text-slate-700 dark:text-slate-300\">“এআই প্রযুক্তি ছাড়া আগামীর বিশ্ব কল্পনাই করা যায় না। আমাদের তরুণদের এই খাতে বিশ্বমানের দক্ষ করে তুলতে হবে।” — <strong>প্রযুক্তি বিশেষজ্ঞ</strong></blockquote><p>অনুষ্ঠানে সফল অংশগ্রহণকারীদের মাঝে সার্টিফিকেট প্রদান করা হয় এবং আগামী দিনে দেশব্যাপী এই কার্যক্রম সম্প্রসারণের ঘোষণা দেওয়া হয়।</p><p class=\"font-semibold text-emerald-700 dark:text-emerald-400 pt-2 border-t border-slate-200 dark:border-slate-800\">প্রযুক্তি বিষয়ক এই উদ্যোগ তরুণদের কর্মসংস্থানে বড় ভূমিকা রাখবে বলে আশা করা হচ্ছে।</p><div class=\"flex items-center justify-between text-xs text-slate-500 pt-2\"><span><i class=\"fa-solid fa-user-pen mr-1\"></i> লেখক: টেক ডেস্ক | স্থিতি: TRENDING</span><span>প্রযুক্তি, বাংলাদেশ</span></div></div>",
+      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+      "source": "বাংলাদেশ নিউজ হাব (স্বতন্ত্র ডেস্ক)"
+    }
+  ]
 }
