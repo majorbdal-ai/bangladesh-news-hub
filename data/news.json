@@ -1,8 +1,21 @@
 {
-  "generatedAt": "2026-08-28T16:08:22.240Z",
+  "generatedAt": "2026-08-28T16:15:27.411Z",
   "totalSources": 5,
-  "count": 11,
+  "count": 12,
   "items": [
+    {
+      "id": 1787933727408,
+      "title": "প্রশাসনিক স্বচ্ছতা ও সুশাসন নিশ্চিতকরণে সরকারের যুগান্তকারী পদক্ষেপ (১০:১৫ PM)",
+      "summary": "সরকারি দপ্তরে সেবার মান বৃদ্ধি এবং জবাবদিহিতা নিশ্চিত করতে নতুন প্রশাসনিক গাইডলাইন কার্যকর করা হয়েছে।",
+      "content": "<div class=\"space-y-4 text-slate-800 dark:text-slate-200\">\n                <div class=\"bg-emerald-50 dark:bg-emerald-950/40 p-4 rounded-2xl border border-emerald-200 dark:border-emerald-800\">\n                    <p class=\"text-xs font-bold text-emerald-700 dark:text-emerald-400 uppercase tracking-wider mb-1\"><i class=\"fa-solid fa-bullseye mr-1\"></i> সবচেয়ে গুরুত্বপূর্ণ তথ্য (Core Facts)</p>\n                    <p class=\"text-base sm:text-lg font-bold leading-relaxed\">সরকারি দপ্তরে সেবার মান বৃদ্ধি এবং জবাবদিহিতা নিশ্চিত করতে নতুন প্রশাসনিক গাইডলাইন কার্যকর করা হয়েছে।</p>\n                </div>\n                <div>\n                    <h4 class=\"font-bold text-sm uppercase text-slate-500 mb-2\">বিশদ বিবরণ ও পটভূমি:</h4>\n                    <p class=\"leading-relaxed\">বর্তমান পরিস্থিতি ও জনকল্যাণ বিবেচনায় এই পদক্ষেপটি অত্যন্ত গুরুত্বপূর্ণ। সংশ্লিষ্ট দপ্তর থেকে জানানো হয়েছে যে, নির্ধারিত সময়ের মধ্যে এর সমস্ত প্রক্রিয়া সম্পন্ন করা হবে। সাধারণ নাগরিক ও ব্যবসায়ীরা এই পদক্ষেপে সন্তোষ প্রকাশ করেছেন।</p>\n                </div>\n                <div class=\"pt-3 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between text-xs text-slate-500\">\n                    <span><i class=\"fa-solid fa-circle-check text-emerald-600 mr-1\"></i> তথ্যের সূত্র: বাংলাদেশ নিউজ হাব (স্বতন্ত্র ডেস্ক)</span>\n                    <span>রিয়েল-টাইম আপডেট</span>\n                </div>\n            </div>",
+      "image": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80",
+      "source": "বাংলাদেশ নিউজ হাব (স্বতন্ত্র ডেস্ক)",
+      "sourceLang": "bn",
+      "category": "politics",
+      "categoryBn": "রাজনীতি",
+      "pubDate": "2026-08-28T16:15:27.408Z",
+      "fetchedAt": "2026-08-28T16:15:27.410Z"
+    },
     {
       "id": 1787933302239,
       "title": "তৃণমূল পর্যায় থেকে জাতীয় ক্রীড়া প্রতিভা অন্বেষণ ও দীর্ঘমেয়াদী প্রশিক্ষণ ক্যাম্প (১০:০৮ PM)",
