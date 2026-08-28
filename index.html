@@ -147,9 +147,9 @@
                                 <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed line-clamp-2 mb-6 flex-1" x-text="item.summary"></p>
                                 <div class="flex items-center justify-between text-xs font-semibold pt-4 border-t border-slate-100 dark:border-slate-800 mt-auto">
                                     <span class="text-emerald-600 dark:text-emerald-400 font-bold" x-text="item.source"></span>
-                                    <span class="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-xl text-xs font-extrabold transition shadow-sm">
+                                    <button @click.stop="openModal(item)" class="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-xl text-xs font-extrabold transition shadow-md cursor-pointer">
                                         <span x-text="lang === 'bn' ? 'বিস্তারিত পড়ুন' : 'Read Full'"></span>
-                                    </span>
+                                    </button>
                                 </div>
                             </div>
                         </div>
