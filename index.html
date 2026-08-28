@@ -83,10 +83,10 @@
                 </div>
                 <h2 class="text-xl sm:text-3xl lg:text-4xl font-extrabold font-serif-title leading-tight mb-4" x-text="heroItem ? heroItem.title : ''"></h2>
                 <p class="text-slate-300 text-sm sm:text-base leading-relaxed font-normal mb-8 max-w-2xl line-clamp-3" x-text="heroItem ? heroItem.summary : ''"></p>
-                <a :href="heroItem ? heroItem.link : '#'" target="_blank" rel="noopener noreferrer" class="inline-flex bg-white text-slate-900 hover:bg-emerald-50 px-7 py-3.5 rounded-2xl text-sm font-extrabold transition shadow-xl items-center space-x-2 cursor-pointer">
-                    <span x-text="lang === 'bn' ? 'পূর্ণ প্রতিবেদন পড়ুন' : 'Read Full Report'"></span>
-                    <i class="fa-solid fa-arrow-up-right-from-square text-xs ml-2"></i>
-                </a>
+                <button @click="openModal(heroItem)" class="inline-flex bg-white text-slate-900 hover:bg-emerald-50 px-7 py-3.5 rounded-2xl text-sm font-extrabold transition shadow-xl items-center space-x-2 cursor-pointer">
+                    <span x-text="lang === 'bn' ? 'পূর্ণ প্রতিবেদন পড়ুন (ওয়েবসাইটে)' : 'Read Full Report (On-site)'"></span>
+                    <i class="fa-solid fa-book-open text-xs ml-2"></i>
+                </button>
             </div>
         </div>
 
