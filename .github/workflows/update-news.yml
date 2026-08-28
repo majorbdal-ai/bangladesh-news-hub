@@ -1,0 +1,42 @@
+name: Update Bangladesh News
+
+on:
+  schedule:
+    # Runs every 20 minutes, all day, every day — forever, with no
+    # maintenance required. GitHub Actions cron uses UTC.
+    - cron: '*/20 * * * *'
+  workflow_dispatch: {} # lets you also trigger it manually from the Actions tab
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-news
+  cancel-in-progress: false
+
+jobs:
+  fetch-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Fetch latest news (no npm install needed — zero dependencies)
+        run: node scripts/fetch-news.mjs
+
+      - name: Commit and push if news changed
+        run: |
+          git config user.name "news-bot"
+          git config user.email "news-bot@users.noreply.github.com"
+          if [ -n "$(git status --porcelain data/news.json)" ]; then
+            git add data/news.json
+            git commit -m "chore: auto-update news $(date -u +'%Y-%m-%d %H:%M UTC')"
+            git push
+          else
+            echo "No changes to publish."
+          fi
