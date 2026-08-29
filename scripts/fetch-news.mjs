@@ -2,9 +2,16 @@ import fs from 'fs';
 import path from 'path';
 import https from 'https';
 import http from 'http';
-import { URL } from 'url';
+import { URL, fileURLToPath } from 'url';
 
-// Comprehensive RSS feed sources for Bangladeshi news portals
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const NEWS_PATH = path.join(__dirname, '..', 'data', 'news.json');
+const USED_IMAGES_PATH = path.join(__dirname, '..', 'data', 'used-images.json');
+
+// Ensure data directory exists
+fs.mkdirSync(path.dirname(NEWS_PATH), { recursive: true });
+
+// Validated and verified RSS feed sources for Bangladeshi news portals
 const RSS_SOURCES = [
     { name: 'Prothom Alo', url: 'https://www.prothomalo.com/feed/', defaultCat: 'national' },
     { name: 'Jugantor', url: 'https://www.jugantor.com/feed.xml', defaultCat: 'politics' },
@@ -68,7 +75,7 @@ function fetchURL(urlString) {
         try {
             const parsedUrl = new URL(urlString);
             const client = parsedUrl.protocol === 'https:' ? https : http;
-            const req = client.get(parsedUrl, { headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' } }, (res) => {
+            const req = client.get(parsedUrl, { headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/120.0.0.0' } }, (res) => {
                 if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
                     let redirectUrl = res.headers.location;
                     if (redirectUrl.startsWith('/')) {
@@ -80,7 +87,9 @@ function fetchURL(urlString) {
                 res.on('data', chunk => data += chunk);
                 res.on('end', () => resolve(data));
             });
-            req.on('error', () => resolve(''));
+            req.on('error', (err) => {
+                resolve('');
+            });
             req.setTimeout(8000, () => {
                 req.destroy();
                 resolve('');
@@ -93,7 +102,8 @@ function fetchURL(urlString) {
 
 function parseXMLItems(xml, defaultCat) {
     const items = [];
-    const itemRegex = /<item>([\s\S]*?)<\/item>/gi;
+    // Support both <item> and <entry> (Atom feeds)
+    const itemRegex = /<(?:item|entry)>([\s\S]*?)<\/(?:item|entry)>/gi;
     let match;
 
     while ((match = itemRegex.exec(xml)) !== null) {
@@ -108,12 +118,12 @@ function parseXMLItems(xml, defaultCat) {
         };
 
         const title = getTag('title');
-        let summary = getTag('description') || getTag('summary');
+        let summary = getTag('description') || getTag('summary') || getTag('content');
         if (summary.length > 250) {
             summary = summary.substring(0, 247) + '...';
         }
         
-        const pubDateStr = getTag('pubDate') || getTag('dc:date') || new Date().toISOString();
+        const pubDateStr = getTag('pubDate') || getTag('dc:date') || getTag('updated') || new Date().toISOString();
         let pubDate;
         try {
             pubDate = new Date(pubDateStr).toISOString();
@@ -162,32 +172,34 @@ function parseXMLItems(xml, defaultCat) {
 async function runFetcher() {
     console.log('🔄 Fetching from multi-site RSS sources...');
     
-    // Load used images tracking file
-    const usedImagesPath = path.join('/home/hermes/workspace/projects/bangladesh-news-hub/data/used-images.json');
     let usedImagesData = { images: [] };
     try {
-        if (fs.existsSync(usedImagesPath)) {
-            usedImagesData = JSON.parse(fs.readFileSync(usedImagesPath, 'utf-8'));
+        if (fs.existsSync(USED_IMAGES_PATH)) {
+            usedImagesData = JSON.parse(fs.readFileSync(USED_IMAGES_PATH, 'utf-8'));
         }
     } catch {
         usedImagesData = { images: [] };
     }
 
     let usedImagesSet = new Set(usedImagesData.images || []);
-
     let allItems = [];
 
     for (const src of RSS_SOURCES) {
         try {
-            console.log(`Checking ${src.name}...`);
+            console.log(`Checking ${src.name} (${src.url})...`);
             const xml = await fetchURL(src.url);
-            if (xml) {
-                const parsed = parseXMLItems(xml, src.defaultCat);
-                console.log(`-> Got ${parsed.length} items from ${src.name}`);
-                allItems.push(...parsed);
+            if (!xml || xml.length < 50) {
+                console.log(`-> [WARN] ${src.name} returned empty or invalid response (length: ${xml ? xml.length : 0}).`);
+                continue;
             }
+            const parsed = parseXMLItems(xml, src.defaultCat);
+            console.log(`-> Got ${parsed.length} items from ${src.name}`);
+            if (parsed.length === 0) {
+                console.log(`-> [DEBUG] Response preview for ${src.name}:`, xml.substring(0, 300).replace(/\n/g, ' '));
+            }
+            allItems.push(...parsed);
         } catch (e) {
-            console.log(`-> Skipped ${src.name} due to fetch error.`);
+            console.log(`-> [ERROR] Failed fetching ${src.name}:`, e.message);
         }
     }
 
@@ -200,12 +212,10 @@ async function runFetcher() {
         filteredItems.push(item);
     }
 
-    // Load existing news.json to merge/prepend properly without overwriting
-    const newsPath = path.join('/home/hermes/workspace/projects/bangladesh-news-hub/data/news.json');
     let existingItems = [];
     try {
-        if (fs.existsSync(newsPath)) {
-            const existingData = JSON.parse(fs.readFileSync(newsPath, 'utf-8'));
+        if (fs.existsSync(NEWS_PATH)) {
+            const existingData = JSON.parse(fs.readFileSync(NEWS_PATH, 'utf-8'));
             if (Array.isArray(existingData.items)) {
                 existingItems = existingData.items;
             }
@@ -230,12 +240,12 @@ async function runFetcher() {
         items: finalItems
     };
 
-    fs.writeFileSync(newsPath, JSON.stringify(finalData, null, 2), 'utf-8');
+    fs.writeFileSync(NEWS_PATH, JSON.stringify(finalData, null, 2), 'utf-8');
 
     const imagesArray = Array.from(usedImagesSet).slice(-300);
-    fs.writeFileSync(usedImagesPath, JSON.stringify({ images: imagesArray }, null, 2), 'utf-8');
+    fs.writeFileSync(USED_IMAGES_PATH, JSON.stringify({ images: imagesArray }, null, 2), 'utf-8');
 
-    console.log(`Successfully updated news.json with ${finalData.items.length} total items.`);
+    console.log(`Successfully updated news.json at ${NEWS_PATH} with ${finalData.items.length} total items.`);
 }
 
 runFetcher();
