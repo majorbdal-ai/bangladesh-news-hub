@@ -1,0 +1,37 @@
+name: Update Bangladesh News
+
+on:
+  schedule:
+    # Runs every 20 minutes automatically
+    - cron: '*/20 * * * *'
+  workflow_dispatch:
+    # Allows manual trigger from GitHub Actions tab
+
+jobs:
+  update-news:
+  
+    permissions:
+      contents: write
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run News Fetcher Script
+        run: |
+          node scripts/fetch-news.mjs
+
+      - name: Commit and Push Updated News
+        run: |
+          git config --global user.name "Bangladesh News Hub Bot"
+          git config --global user.email "bot@news-hub.local"
+          git add data/news.json
+          git status
+          git diff --quiet && echo "No changes to commit" || (git commit -m "Auto-update live news feed [skip ci]" && git push)
