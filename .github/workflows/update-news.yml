@@ -2,10 +2,11 @@ name: Update Bangladesh News
 
 on:
   schedule:
-    # Runs every 5 minutes automatically
-    - cron: '*/5 * * * *'
+    # GitHub throttles high-frequency crons hard: a */5 schedule on a public
+    # repo runs roughly every 2-6 HOURS in practice, not every 5 minutes.
+    # 30 minutes is honoured far more reliably and still keeps the feed fresh.
+    - cron: '*/30 * * * *'
   workflow_dispatch:
-    # Allows manual trigger from GitHub Actions tab
 
 concurrency:
   group: update-news
@@ -13,8 +14,8 @@ concurrency:
 
 jobs:
   update-news:
-    timeout-minutes: 4
-    
+    timeout-minutes: 10
+
     permissions:
       contents: write
 
@@ -23,25 +24,55 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
 
+      - name: Back up current feed
+        run: cp data/news.json /tmp/news.before.json
+
       - name: Run News Fetcher Script
+        run: node scripts/fetch-news.mjs
+
+      - name: Validate feed (never publish a broken/empty news.json)
         run: |
-          node scripts/fetch-news.mjs
+          node -e "
+            const fs = require('fs');
+            const s = JSON.parse(fs.readFileSync('data/news.json', 'utf8'));
+            if (!Array.isArray(s.items)) throw new Error('items is not an array');
+            if (s.items.length === 0) throw new Error('feed is empty');
+            const bad = s.items.filter(i => !i.title || !i.pubDate);
+            if (bad.length) throw new Error(bad.length + ' items missing title/pubDate');
+            const newest = new Date(Math.max(...s.items.map(i => new Date(i.pubDate).getTime())));
+            const lagH = (Date.now() - newest.getTime()) / 36e5;
+            console.log('FEED_OK items=' + s.items.length + ' generatedAt=' + s.generatedAt + ' newestLag=' + lagH.toFixed(1) + 'h');
+            if (!Number.isFinite(lagH)) throw new Error('no valid pubDate');
+            // a feed older than 24h means every source silently died
+            if (lagH > 24) throw new Error('newest item is ' + lagH.toFixed(1) + 'h old — all sources likely dead');
+          "
 
       - name: Commit and Push Updated News with Retry
         run: |
-          git config --global user.name "Bangladesh News Hub Bot"
-          git config --global user.email "bot@news-hub.local"
+          git config user.name "Bangladesh News Hub Bot"
+          git config user.email "bot@news-hub.local"
           git add data/news.json data/used-images.json
           git status --porcelain
-          git diff --cached --quiet && echo "No changes to commit" || (
-            git commit -m "Auto-update live news feed [skip ci]" || true
-            for i in {1..3}; do
-              git pull --rebase origin main && git push origin main && break || sleep 3
-            done
-          )
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git commit -m "Auto-update live news feed [skip ci]"
+          for i in 1 2 3 4 5; do
+            if git pull --rebase --autostash origin main && git push origin HEAD:main; then
+              echo "Pushed on attempt $i"
+              exit 0
+            fi
+            echo "attempt $i failed, backing off"
+            sleep $((i * 5))
+          done
+          echo "::error::could not push updated feed after 5 attempts"
+          exit 1

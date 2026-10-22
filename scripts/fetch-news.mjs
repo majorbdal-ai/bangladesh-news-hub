@@ -13,14 +13,17 @@ fs.mkdirSync(path.dirname(NEWS_PATH), { recursive: true });
 
 // Validated and verified RSS feed sources for Bangladeshi news portals
 const RSS_SOURCES = [
+    // Verified reachable (checked 2026-10): 6 of 8 live sources.
     { name: 'Prothom Alo', url: 'https://www.prothomalo.com/feed/', defaultCat: 'national' },
-    { name: 'Jugantor', url: 'https://www.jugantor.com/feed.xml', defaultCat: 'politics' },
-    { name: 'Bdnews24 Bangla', url: 'https://bangla.bdnews24.com/feed', defaultCat: 'national' },
     { name: 'BBC Bangla', url: 'https://feeds.bbci.co.uk/bengali/rss.xml', defaultCat: 'international' },
-    { name: 'Kaler Kantho', url: 'https://www.kalerkantho.com/rss.xml', defaultCat: 'national' },
     { name: 'Ittefaq', url: 'https://www.ittefaq.com.bd/feed/', defaultCat: 'national' },
-    { name: 'Samakal', url: 'https://samakal.com/feed/', defaultCat: 'national' },
-    { name: 'Bangla Tribune', url: 'https://www.banglatribune.com/feed/', defaultCat: 'national' }
+    { name: 'Bangla Tribune', url: 'https://www.banglatribune.com/feed/', defaultCat: 'national' },
+    { name: 'Samakal', url: 'https://samakal.com/rss', defaultCat: 'national' },
+    { name: 'Jago News 24', url: 'https://www.jagonews24.com/rss/rss.xml', defaultCat: 'national' },
+    { name: 'The Daily Star', url: 'https://www.thedailystar.net/frontpage/rss.xml', defaultCat: 'national' },
+    // Dropped: Jugantor (/feed.xml -> 404), Kaler Kantho (403 Cloudflare),
+    // bdnews24 Bangla (serves HTML, no RSS), Samakal /feed/ (301 -> HTML).
+    // Re-add only after re-verifying they return real XML again.
 ];
 
 // Category keyword mapping
@@ -70,27 +73,25 @@ const DEFAULT_IMAGES = {
     international: 'https://images.unsplash.com/photo-1521295121783-8a321d551ad2?auto=format&fit=crop&w=1200&q=80'
 };
 
-function fetchURL(urlString) {
+function fetchURLOnce(urlString) {
     return new Promise((resolve) => {
         try {
             const parsedUrl = new URL(urlString);
             const client = parsedUrl.protocol === 'https:' ? https : http;
-            const req = client.get(parsedUrl, { headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/120.0.0.0' } }, (res) => {
+            const req = client.get(parsedUrl, { headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/120.0.0.0', 'Accept': 'application/rss+xml, application/xml, text/xml, */*' } }, (res) => {
                 if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
                     let redirectUrl = res.headers.location;
                     if (redirectUrl.startsWith('/')) {
                         redirectUrl = `${parsedUrl.protocol}//${parsedUrl.host}${redirectUrl}`;
                     }
-                    return fetchURL(redirectUrl).then(resolve);
+                    return fetchURLOnce(redirectUrl).then(resolve);
                 }
                 let data = '';
                 res.on('data', chunk => data += chunk);
                 res.on('end', () => resolve(data));
             });
-            req.on('error', (err) => {
-                resolve('');
-            });
-            req.setTimeout(8000, () => {
+            req.on('error', () => resolve(''));
+            req.setTimeout(20000, () => {
                 req.destroy();
                 resolve('');
             });
@@ -98,6 +99,17 @@ function fetchURL(urlString) {
             resolve('');
         }
     });
+}
+
+// Big Bangladeshi portals are slow and rate-limit hard, so one attempt is not
+// enough: retry once before treating a source as dead.
+async function fetchURL(urlString) {
+    let xml = await fetchURLOnce(urlString);
+    if (!xml || xml.length < 50) {
+        await new Promise(r => setTimeout(r, 1500));
+        xml = await fetchURLOnce(urlString);
+    }
+    return xml;
 }
 
 function parseXMLItems(xml, defaultCat) {
